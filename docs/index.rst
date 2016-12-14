@@ -117,8 +117,8 @@ Modify your settings in the following way:
 
 sorl-thumnail
 ^^^^^^^^^^^^^
-Integration with `easy_thumbnails
-<https://pypi.python.org/pypi/easy-thumbnails>`_.
+Integration with `sorl.thimbnail
+<https://pypi.python.org/pypi/sorl-thumbnail>`_.
 
 Modify your settings in the following way:
 
@@ -209,7 +209,7 @@ Contents:
 .. toctree::
    :maxdepth: 20
 
-   index
+   dummy_thumbnails
 
 Indices and tables
 ===============================================
