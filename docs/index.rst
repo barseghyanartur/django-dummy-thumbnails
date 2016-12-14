@@ -1,7 +1,7 @@
 =======================
 django-dummy-thumbnails
 =======================
-Generate dummy thumbnails for most used Django thumbnail generators.
+Generate dummy thumbnails with most popular Django thumbnail generators.
 
 There are times when you have a database of Django site and you need to
 quickly start it up to fix/develop, but then you realise that you have to
@@ -184,6 +184,12 @@ or use tox to check specific env:
 
     tox -e py35
 
+or run Django tests:
+
+.. code-block:: sh
+
+    ./manage.py test dummy_thumbnails --settings=settings.testing
+
 License
 =======
 GPL 2.0/LGPL 2.1
@@ -203,7 +209,7 @@ Contents:
 .. toctree::
    :maxdepth: 20
 
-   debug_toolbar_force
+   index
 
 Indices and tables
 ===============================================
