@@ -117,7 +117,7 @@ Modify your settings in the following way:
 
 sorl-thumnail
 ^^^^^^^^^^^^^
-Integration with `sorl.thimbnail
+Integration with `sorl-thimbnail
 <https://pypi.python.org/pypi/sorl-thumbnail>`_.
 
 Modify your settings in the following way:
