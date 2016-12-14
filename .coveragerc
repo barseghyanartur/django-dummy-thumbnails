@@ -1,0 +1,5 @@
+[run]
+omit =
+    src/dummy_thumbnails/tests/*
+    example/simple/settings/*
+    example/simple/wsgi.py

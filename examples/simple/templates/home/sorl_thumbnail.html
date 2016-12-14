@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% load sorl_thumbnail %}
+
+{% block nav-menu %}
+<ul class="button-group">
+
+<li><a href="{% url 'easy-thumbnails' %}" class="button easy-thumbnails">{% trans "easy-thumbnails" %}</a></li>
+<li><a href="{% url 'sorl-thumbnail' %}" class="button foo-json-view">{% trans "sorl-thumbnail" %}</a></li>
+
+</ul>
+{% endblock nav-menu %}
+
+{% block main-content %}
+
+    {% thumbnail 'None1' "640x480" crop="center" as im %}
+        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="thumbnail" />
+    {% endthumbnail %}
+
+    {% thumbnail 'None2' "480x640" crop="center" as im %}
+        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="thumbnail" />
+    {% endthumbnail %}
+
+    {% thumbnail 'None3' "200x200" crop="center" as im %}
+        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="thumbnail" />
+    {% endthumbnail %}
+
+{% endblock main-content %}
+
+{% block sidebar-content %}
+{% endblock sidebar-content %}
