@@ -137,7 +137,8 @@ if versions.DJANGO_GTE_1_10:
                 ],
                 'libraries': {
                     'sorl_thumbnail': 'sorl.thumbnail.templatetags.thumbnail',
-                    'easy_thumbnails': 'easy_thumbnails.templatetags.thumbnail',
+                    'easy_thumbnails':
+                        'easy_thumbnails.templatetags.thumbnail',
                 },
                 'debug': DEBUG_TEMPLATE,
             }
@@ -168,7 +169,8 @@ elif versions.DJANGO_GTE_1_8:
                 ],
                 'libraries': {
                     'sorl_thumbnail': 'sorl.thumbnail.templatetags.thumbnail',
-                    'easy_thumbnails': 'easy_thumbnails.templatetags.thumbnail',
+                    'easy_thumbnails':
+                        'easy_thumbnails.templatetags.thumbnail',
                 },
                 'debug': DEBUG_TEMPLATE,
             }
@@ -251,6 +253,8 @@ LOGIN_URL = '/en/accounts/login/'
 LOGIN_ERROR_URL = '/en/accounts/login/'
 LOGOUT_URL = '/en/accounts/logout/'
 LOGIN_REDIRECT_URL = '/en/'
+
+DUMMY_THUMBNAILS_IMAGES_PATH = os.path.join(MEDIA_ROOT, 'mixed')
 
 THUMBNAIL_SOURCE_GENERATORS = (
     'dummy_thumbnails.contrib.thumbnailers.easy_thumbnails.source_generators.'

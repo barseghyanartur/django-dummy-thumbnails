@@ -42,4 +42,5 @@ os.environ.setdefault(
     '/home/user/repositories/django-dummy-thumbnails/src'
 )
 
-# DUMMY_THUMBNAILS_IMAGES_PATH = os.path.join(MEDIA_ROOT, 'mixed')
+# __MEDIA_ROOT = PROJECT_DIR(os.path.join('..', '..', 'media'))
+# DUMMY_THUMBNAILS_IMAGES_PATH = os.path.join(__MEDIA_ROOT, 'mixed')
