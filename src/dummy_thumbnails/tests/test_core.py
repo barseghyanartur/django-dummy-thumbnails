@@ -9,6 +9,7 @@ from django.test import TestCase, Client
 from django.core.urlresolvers import reverse
 
 from ..base import get_random_image
+from ..helpers import prepare_dirs_and_symlinks
 
 from .base import log_info
 from .helpers import setup_app
@@ -27,33 +28,7 @@ class DummyThumbnailsCoreTest(TestCase):
         """Set up."""
         setup_app()
         self.client = Client()
-        self.__prepare_dirs_and_symlinks()
-
-    def __prepare_dirs_and_symlinks(self):
-        """Prepare dirs and symlinks."""
-        # What we shall do is to create dirs and make a symbolic link.
-        __dirs = (
-            os.path.join('examples', 'db'),
-            os.path.join('examples', 'logs'),
-            os.path.join('examples', 'tmp'),
-            os.path.join('examples', 'media', 'static'),
-            os.path.join('examples', 'static')
-        )
-        for __dir in __dirs:
-            try:
-                os.makedirs(os.path.abspath(__dir))
-            except OSError:
-                pass
-
-        try:
-            os.symlink(
-                os.path.abspath(os.path.join('src', 'dummy_thumbnails',
-                                             'static', 'dummy_thumbnails',
-                                             'images', 'mixed')),
-                os.path.abspath(os.path.join('examples', 'media', 'mixed'))
-            )
-        except OSError:
-            pass
+        prepare_dirs_and_symlinks()
 
     @log_info
     def test_get_random_image(self):
