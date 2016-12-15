@@ -42,7 +42,7 @@ Installation
            # ...
         )
 
-(3) Optionally specify a custom path to your images directory:
+(3) Specify a custom path to your images directory:
 
     .. code-block:: python
 
@@ -57,6 +57,20 @@ Installation
     .. code-block:: sh
 
         ln -s /home/path/to/images /home/repos/your-django-project/media
+
+    If you prefer to use included public domain images, run the following
+    management commands:
+
+    .. code-block:: sh
+
+        ./manage.py collectstatic --noinput
+        ./manage.py dummy_thumbnails_symlink_dummy_images
+
+    And specify the following path
+
+    .. code-block:: python
+
+        DUMMY_THUMBNAILS_IMAGES_PATH = os.path.join(MEDIA_ROOT, 'mixed')
 
 Usage
 =====

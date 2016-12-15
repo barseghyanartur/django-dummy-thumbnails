@@ -28,9 +28,10 @@ def prepare_dirs_and_symlinks(create_dirs=False):
 
     try:
         os.symlink(
-            os.path.abspath(os.path.join('src', 'dummy_thumbnails',
-                                         'static', 'dummy_thumbnails',
-                                         'images', 'mixed')),
+            os.path.join(settings.STATIC_ROOT,
+                         'dummy_thumbnails',
+                         'images',
+                         'mixed'),
             os.path.join(settings.MEDIA_ROOT, 'mixed')
         )
     except OSError:

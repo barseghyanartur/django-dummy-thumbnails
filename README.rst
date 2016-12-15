@@ -59,10 +59,11 @@ Installation
         ln -s /home/path/to/images /home/repos/your-django-project/media
 
     If you prefer to use included public domain images, run the following
-    management command:
+    management commands:
 
     .. code-block:: sh
 
+        ./manage.py collectstatic --noinput
         ./manage.py dummy_thumbnails_symlink_dummy_images
 
     And specify the following path
