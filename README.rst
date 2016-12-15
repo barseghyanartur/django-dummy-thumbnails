@@ -1,14 +1,14 @@
 =======================
 django-dummy-thumbnails
 =======================
-Generate dummy thumbnails with most popular Django thumbnail generators.
+Dummy thumbnails for most popular Django thumbnail generators.
 
-There are times when you have a database of Django site and you need to
-quickly start it up to fix/develop, but then you realise that you have to
-have images, because either your layout is broken or, in the worst case,
-entire site is broken (500). This library has been written for developers
-in order to avoid above mentioned problems in the shortest way possible,
-with least efforts possible.
+There are times when you have a database of a Django site and you need to
+quickly start it up to fix/develop, but then you realise that images are
+missing and you need to have images, because either your layout is broken or,
+in the worst case, entire site is broken (500). This library has been written
+for developers in order to avoid above mentioned problems in the shortest way
+possible, with least efforts possible.
 
 Prerequisites
 =============
@@ -39,7 +39,7 @@ Installation
         INSTALLED_APPS = (
             # ...
             'dummy_thumbnails',
-           # ...
+            # ...
         )
 
 (3) Specify a custom path to your images directory:
@@ -58,8 +58,9 @@ Installation
 
         ln -s /home/path/to/images /home/repos/your-django-project/media
 
-    If you prefer to use included public domain images, run the following
-    management commands:
+    If you prefer to use included `public domain images
+    <https://github.com/barseghyanartur/django-dummy-thumbnails/tree/master/src/dummy_thumbnails/static/dummy_thumbnails/images/mixed>`_,
+    run the following management commands:
 
     .. code-block:: sh
 
@@ -86,9 +87,9 @@ A number of most popular image thumbnailers for Django is supported. If you
 can't find your favourite thumbnailer, open an issue or consider making a
 pull request.
 
-easy_thumbnails
+easy-thumbnails
 ^^^^^^^^^^^^^^^
-Integration with `easy_thumbnails
+Integration with `easy-thumbnails
 <https://pypi.python.org/pypi/easy-thumbnails>`_.
 
 Modify your settings in the following way:
@@ -112,8 +113,8 @@ Modify your settings in the following way:
             'dummy_thumbnails.contrib.thumbnailers.easy_thumbnails.source_generators.dummy_thumbnail',
         )
 
-(3) If you are using the included images, don't forget to collect the static
-    files and create a symlink:
+(3) If you are using the included public domain images, don't forget to collect
+    the static files and create a symlink:
 
     .. code-block:: sh
 
@@ -130,14 +131,14 @@ Modify your settings in the following way:
         <img src="{% thumbnail 'None2' 480x640 crop %}" alt="" />
         <img src="{% thumbnail 'None3' 200x200 crop %}" alt="" />
 
-sorl-thumnail
-^^^^^^^^^^^^^
-Integration with `sorl-thimbnail
+sorl-thumbnail
+^^^^^^^^^^^^^^
+Integration with `sorl-thumbnail
 <https://pypi.python.org/pypi/sorl-thumbnail>`_.
 
 Modify your settings in the following way:
 
-(1) Add ``dummy_thumbnails`` to the ``INSTALLED_APPS``:
+(1) Add ``sorl.thumbnail`` to the ``INSTALLED_APPS``:
 
     .. code-block:: python
 
@@ -154,8 +155,8 @@ Modify your settings in the following way:
 
         THUMBNAIL_ENGINE = 'dummy_thumbnails.contrib.sorl_thumbnail.engines.DummyThumbnailsEngine'
 
-(3) If you are using the included images, don't forget to collect the static
-    files and create a symlink:
+(3) If you are using the included public domain images, don't forget to collect
+    the static files and create a symlink:
 
     .. code-block:: sh
 
@@ -179,6 +180,29 @@ Modify your settings in the following way:
         {% thumbnail 'None3' "200x200" crop="center" as im %}
             <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" />
         {% endthumbnail %}
+
+Demo
+====
+Run demo locally
+----------------
+In order to be able to quickly evaluate the `django-dummy-thumbnails`, a demo
+app (with a quick installer) has been created (works on Ubuntu/Debian, may
+work on other Linux systems as well, although not guaranteed). Follow the
+instructions below to have the demo running within a minute.
+
+Grab the latest ``dummy_thumbnails_demo_installer.sh``:
+
+.. code-block:: sh
+
+    wget -O - https://raw.github.com/barseghyanartur/django-dummy-thumbnails/stable/examples/dummy_thumbnails_demo_installer.sh | bash
+
+Open your browser and test the app.
+
+- URL: http://127.0.0.1:8001/
+
+If quick installer doesn't work for you, see the manual steps on running the
+`example project
+<https://github.com/barseghyanartur/django-dummy-thumbnails/tree/stable/examples>`_.
 
 Testing
 =======

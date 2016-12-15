@@ -10,6 +10,7 @@ on.
 Must haves
 ----------
 - ``django-imagekit`` integration.
++ Add installable demo.
 
 Should haves
 ------------

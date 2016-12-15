@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Foundation Template | Blog</title>
+<title>django-dummy-thumbnails | Demo</title>
 <meta name="description" content="Documentation and reference library for ZURB Foundation. JavaScript, CSS, components, grid and more."/>
 <meta name="author" content="ZURB, inc. ZURB network also includes zurb.com"/>
 <meta name="copyright" content="ZURB, inc. Copyright (c) 2015"/>
@@ -26,7 +26,7 @@
 </ul>
 {% endblock nav-menu %}
 </div>
-<h1>{% block page-title %}Blog <small>This is my blog. It's awesome.</small>{% endblock page-title %}</h1>
+<h1>{% block page-title %}django-dummy-thumbnails <small>Dummy thumbnails for most popular Django thumbnail generators.</small>{% endblock page-title %}</h1>
 <hr/>
 </div>
 </div>
@@ -43,6 +43,7 @@
 
 <aside class="large-3 columns">
 {% block sidebar-content %}
+{% comment %}
 <h5>Categories</h5>
 <ul class="side-nav">
 <li><a href="#">News</a></li>
@@ -56,6 +57,7 @@
 <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.</p>
 <a href="#">Read More &rarr;</a>
 </div>
+{% endcomment %}
 {% endblock sidebar-content %}
 </aside>
 
@@ -67,15 +69,14 @@
 <hr/>
 <div class="row">
 <div class="large-6 columns">
-<p>{% block footer-copyright %}&copy; Copyright no one at all. Go to town.{% endblock footer-copyright %}</p>
+<p>{% block footer-copyright %}&copy; Copyright 2016 Artur Barseghyan.{% endblock footer-copyright %}</p>
 </div>
 <div class="large-6 columns">
 {% block footer-links %}
 <ul class="inline-list right">
-<li><a href="#">Link 1</a></li>
-<li><a href="#">Link 2</a></li>
-<li><a href="#">Link 3</a></li>
-<li><a href="#">Link 4</a></li>
+<li><a href="https://pypi.python.org/pypi/django-dummy-thumbnails">PyPI</a></li>
+<li><a href="https://github.com/barseghyanartur/django-dummy-thumbnails">GitHub</a></li>
+<li><a href="http://pythonhosted.org/django-dummy-thumbnails/">Documentation</a></li>
 </ul>
 {% endblock footer-links %}
 </div>

@@ -1,5 +1,5 @@
 __title__ = 'dummy_thumbnails'
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 __author__ = 'Artur Barseghyan <artur.barseghyan@gmail.com>'
 __copyright__ = '2016 Artur Barseghyan'
 __license__ = 'GPL 2.0/LGPL 2.1'

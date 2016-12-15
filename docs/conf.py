@@ -39,9 +39,6 @@ from django.conf import settings
 if not settings.configured:
     INSTALLED_APPS = list(example_settings.INSTALLED_APPS)
 
-    if 'foo' in INSTALLED_APPS:
-        INSTALLED_APPS.remove('debug_toolbar_force.tests.foo')
-
     configure_kwargs = {
         'DATABASES': example_settings.DATABASES,
         'INSTALLED_APPS': INSTALLED_APPS,
@@ -291,7 +288,7 @@ texinfo_documents = [
    u'django-dummy-thumbnails Documentation',
    u'Artur Barseghyan <artur.barseghyan@gmail.com>',
    'django-dummy-thumbnails',
-   "Generate dummy thumbnails.",
+   "Dummy thumbnails for most popular Django thumbnail generators..",
    'Miscellaneous'),
 ]
 

@@ -15,9 +15,6 @@ urlpatterns = []
 urlpatterns_args = [
     url(r'^admin/', include(admin.site.urls)),
 
-    # foo URLs:
-    # url(r'^foo/', include('dummy_thumbnails.tests.foo.urls')),
-
     url(r'^$', TemplateView.as_view(template_name='home/base.html')),
     url(r'^easy-thumbnails/$',
         TemplateView.as_view(template_name='home/easy_thumbnails.html'),
@@ -25,6 +22,9 @@ urlpatterns_args = [
     url(r'^sorl-thumbnail/$',
         TemplateView.as_view(template_name='home/sorl_thumbnail.html'),
         name='sorl-thumbnail'),
+    url(r'^django-imagekit/$',
+        TemplateView.as_view(template_name='home/django_imagekit.html'),
+        name='django-imagekit'),
 ]
 
 urlpatterns += i18n_patterns(*urlpatterns_args)

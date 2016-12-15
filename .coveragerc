@@ -1,5 +1,6 @@
 [run]
 omit =
     src/dummy_thumbnails/tests/*
+    src/dummy_thumbnails/contrib/thumbnailers/django_imagekit/*
     example/simple/settings/*
     example/simple/wsgi.py

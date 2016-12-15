@@ -6,7 +6,7 @@ try:
 except:
     readme = ''
 
-version = '0.1.1'
+version = '0.1.2'
 
 install_requires = [
     'six>=1.4.1',
@@ -27,7 +27,8 @@ tests_require = [
 setup(
     name='django-dummy-thumbnails',
     version=version,
-    description="Dummy thumbnails for Django thumbnailers.",
+    description="Dummy thumbnails for most popular Django thumbnail "
+                "generators.",
     long_description=readme,
     classifiers=[
         "Programming Language :: Python :: 2.7",

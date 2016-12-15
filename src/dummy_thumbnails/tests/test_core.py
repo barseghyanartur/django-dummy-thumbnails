@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import os
 import unittest
 
 from bs4 import BeautifulSoup
@@ -8,6 +7,7 @@ from bs4 import BeautifulSoup
 from django.test import TestCase, Client
 from django.core.urlresolvers import reverse
 
+from ..conf import get_setting
 from ..base import get_random_image
 from ..helpers import prepare_dirs_and_symlinks
 
@@ -28,10 +28,10 @@ class DummyThumbnailsCoreTest(TestCase):
         """Set up."""
         setup_app()
         self.client = Client()
-        prepare_dirs_and_symlinks()
+        prepare_dirs_and_symlinks(create_dirs=True)
 
     @log_info
-    def test_get_random_image(self):
+    def test_01_get_random_image(self):
         """Test ``get_random_image``."""
         image = get_random_image()
         self.assertIsNotNone(image)
@@ -57,6 +57,15 @@ class DummyThumbnailsCoreTest(TestCase):
     def test_03_test_sorl_thumbnail(self):
         """Test ``sorl.thumbnail``."""
         return self.__test_images(reverse('sorl-thumbnail'))
+
+    @log_info
+    def test_04_test_settings(self):
+        """Test settings."""
+        images_path = get_setting('IMAGES_PATH')
+        self.assertIsNotNone(images_path)
+        default_images_path = '/path/to/images/'
+        images_path_default = get_setting('I_DONT_EXIST', default_images_path)
+        self.assertEqual(images_path_default, default_images_path)
 
 
 if __name__ == '__main__':
