@@ -142,7 +142,7 @@ Modify your settings in the following way:
 
         INSTALLED_APPS = [
             # ...
-            'sorl_thumbnail',
+            'sorl.thumbnail',
             'dummy_thumbnails',
             # ...
         ]
