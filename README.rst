@@ -148,11 +148,11 @@ Modify your settings in the following way:
             # ...
         ]
 
-(2) Set the dummy thumbnail engine as ``SORL_THUMBNAIL_THUMBNAIL_ENGINE``:
+(2) Set the dummy thumbnail engine as ``THUMBNAIL_ENGINE``:
 
     .. code-block:: python
 
-        SORL_THUMBNAIL_THUMBNAIL_ENGINE = 'dummy_thumbnails.contrib.sorl_thumbnail.engines.DummyThumbnailsEngine'
+        THUMBNAIL_ENGINE = 'dummy_thumbnails.contrib.sorl_thumbnail.engines.DummyThumbnailsEngine'
 
 (3) If you are using the included images, don't forget to collect the static
     files and create a symlink:
