@@ -66,7 +66,7 @@ Installation
         ./manage.py collectstatic --noinput
         ./manage.py dummy_thumbnails_symlink_dummy_images
 
-    And specify the following path
+    And specify the following path:
 
     .. code-block:: python
 
@@ -113,11 +113,12 @@ Modify your settings in the following way:
         )
 
 (3) If you are using the included images, don't forget to collect the static
-    files:
+    files and create a symlink:
 
     .. code-block:: sh
 
         ./manage.py collectstatic --noinput
+        ./manage.py dummy_thumbnails_symlink_dummy_images
 
 (4) Now the following would work:
 
@@ -154,11 +155,12 @@ Modify your settings in the following way:
         SORL_THUMBNAIL_THUMBNAIL_ENGINE = 'dummy_thumbnails.contrib.sorl_thumbnail.engines.DummyThumbnailsEngine'
 
 (3) If you are using the included images, don't forget to collect the static
-    files:
+    files and create a symlink:
 
     .. code-block:: sh
 
         ./manage.py collectstatic --noinput
+        ./manage.py dummy_thumbnails_symlink_dummy_images
 
 (4) Now the following would work:
 
