@@ -1,17 +1,7 @@
-{% extends "base.html" %}
+{% extends "home/base_site.html" %}
 {% load i18n %}
 
 {% load sorl_thumbnail %}
-
-{% block nav-menu %}
-<ul class="button-group">
-
-<li><a href="{% url 'easy-thumbnails' %}" class="button easy-thumbnails">{% trans "easy-thumbnails" %}</a></li>
-<li><a href="{% url 'sorl-thumbnail' %}" class="button sorl-thumbnail">{% trans "sorl-thumbnail" %}</a></li>
-<li><a href="{% url 'django-imagekit' %}" class="button django-imagekit">{% trans "django-imagekit" %}</a></li>
-
-</ul>
-{% endblock nav-menu %}
 
 {% block main-content %}
 

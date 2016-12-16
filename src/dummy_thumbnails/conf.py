@@ -27,7 +27,7 @@ def get_setting(setting, override=None):
     if hasattr(settings, attr_name):
         value = getattr(settings, attr_name)
     else:
-        if hasattr(defaults, attr_name):
+        if hasattr(defaults, setting):
             value = getattr(defaults, setting)
         else:
             return override

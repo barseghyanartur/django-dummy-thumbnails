@@ -6,6 +6,7 @@ Subpackages
 
 .. toctree::
 
+    dummy_thumbnails.contrib.thumbnailers.django_imagekit
     dummy_thumbnails.contrib.thumbnailers.easy_thumbnails
     dummy_thumbnails.contrib.thumbnailers.sorl_thumbnail
 

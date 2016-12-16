@@ -15,7 +15,7 @@ urlpatterns = []
 urlpatterns_args = [
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^$', TemplateView.as_view(template_name='home/base.html')),
+    url(r'^$', TemplateView.as_view(template_name='home/base_site.html')),
     url(r'^easy-thumbnails/$',
         TemplateView.as_view(template_name='home/easy_thumbnails.html'),
         name='easy-thumbnails'),

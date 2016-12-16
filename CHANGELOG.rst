@@ -15,8 +15,16 @@ are used for versioning (schema follows below):
   0.3.4 to 0.4).
 - All backwards incompatible changes are mentioned in this document.
 
+0.1.3
+-----
+2016-12-16
+
+- Minor fixes/improvements.
+- Added ``django-imagekit`` support.
+
 0.1.2
 -----
+2016-12-15
 
 - Minor fixes in docs and tests.
 - Installable demo script added.

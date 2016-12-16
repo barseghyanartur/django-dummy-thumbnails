@@ -6,5 +6,6 @@ django-debug-toolbar==1.5
 sqlparse==0.2.2
 django-nine
 
+django-imagekit==3.3
 easy-thumbnails==2.3
 sorl-thumbnail==12.4a1

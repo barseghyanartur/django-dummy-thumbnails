@@ -39,7 +39,8 @@ class DummyThumbnailsCoreTest(TestCase):
     def __test_images(self, url):
         """Test if images are not empty."""
         response = self.client.get(url)
-        soup = BeautifulSoup(response.content)
+        response_content = getattr(response, 'content', "")
+        soup = BeautifulSoup(response_content)
         images = soup.find_all(
             'img',
             attrs={'class': 'thumbnail'}
@@ -49,23 +50,28 @@ class DummyThumbnailsCoreTest(TestCase):
             self.assertIsNotNone(source)
 
     @log_info
-    def test_02_test_easy_thumbnails(self):
-        """Test ``easy_thumbnails``."""
-        return self.__test_images(reverse('easy-thumbnails'))
-
-    @log_info
-    def test_03_test_sorl_thumbnail(self):
-        """Test ``sorl.thumbnail``."""
-        return self.__test_images(reverse('sorl-thumbnail'))
-
-    @log_info
-    def test_04_test_settings(self):
+    def test_02_test_settings(self):
         """Test settings."""
         images_path = get_setting('IMAGES_PATH')
         self.assertIsNotNone(images_path)
         default_images_path = '/path/to/images/'
         images_path_default = get_setting('I_DONT_EXIST', default_images_path)
         self.assertEqual(images_path_default, default_images_path)
+
+    @log_info
+    def test_03_test_easy_thumbnails(self):
+        """Test ``easy_thumbnails``."""
+        return self.__test_images(reverse('easy-thumbnails'))
+
+    @log_info
+    def test_04_test_sorl_thumbnail(self):
+        """Test ``sorl.thumbnail``."""
+        return self.__test_images(reverse('sorl-thumbnail'))
+
+    @log_info
+    def test_05_test_django_imagekit(self):
+        """Test ``django-imagekit``."""
+        return self.__test_images(reverse('django-imagekit'))
 
 
 if __name__ == '__main__':

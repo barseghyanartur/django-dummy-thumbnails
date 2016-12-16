@@ -35,6 +35,3 @@ QUICK_START.rst
 #/examples/simple/settings/__init__.py
 /examples/simple/settings/local_settings.py
 /src/dummy_thumbnails/static/dummy_thumbnails/images/various/
-docs/dummy_thumbnails.contrib.thumbnailers.django_imagekit*
-/src/dummy_thumbnails/contrib/thumbnailers/django_imagekit/*
-/examples/simple/templates/home/django_imagekit.html

@@ -240,11 +240,11 @@ INSTALLED_APPS = [
     # What we want to test it with
     'easy_thumbnails',
     'sorl.thumbnail',
-    # 'imagekit',
+    'imagekit',
 
     # django-dummy-thumbnails
     'dummy_thumbnails',
-    # 'dummy_thumbnails.contrib.thumbnailers.easy_thumbnails.source_generators',
+    'dummy_thumbnails.contrib.thumbnailers.django_imagekit.generatorlibrary',
 
     # Other project specific apps
     # 'dummy_thumbnails.tests.foo',  # Test app

@@ -1,7 +1,8 @@
 =======================
 django-dummy-thumbnails
 =======================
-Dummy thumbnails for most popular Django thumbnail generators.
+Dummy thumbnails for `most popular <Supported thumbnailers_>`_ Django
+thumbnail generators.
 
 There are times when you have a database of a Django site and you need to
 quickly start it up to fix/develop, but then you realise that images are
@@ -81,11 +82,15 @@ Replace broken images with dummy ones
 -------------------------------------
 That's what it's all about - replacing the broken images with dummy ones.
 
+.. note:: You should **never** use this in production. All the changes
+          mentioned above are supposed to be applied to **development**
+          settings only.
+
 Supported thumbnailers
 ~~~~~~~~~~~~~~~~~~~~~~
-A number of most popular image thumbnailers for Django is supported. If you
-can't find your favourite thumbnailer, open an issue or consider making a
-pull request.
+Most popular image thumbnailers for Django (`django-imagekit`_,
+`sorl-thumbnail`_ and `easy-thumbnails`_) are supported. If you can't find
+your favourite thumbnailer, open an issue or consider making a pull request.
 
 easy-thumbnails
 ^^^^^^^^^^^^^^^
@@ -94,7 +99,7 @@ Integration with `easy-thumbnails
 
 Modify your settings in the following way:
 
-(1) Add ``dummy_thumbnails`` to the ``INSTALLED_APPS``:
+(1) Add ``easy_thumbnails`` and ``dummy_thumbnails`` to the ``INSTALLED_APPS``:
 
     .. code-block:: python
 
@@ -138,7 +143,7 @@ Integration with `sorl-thumbnail
 
 Modify your settings in the following way:
 
-(1) Add ``sorl.thumbnail`` to the ``INSTALLED_APPS``:
+(1) Add ``sorl.thumbnail`` and ``dummy_thumbnails`` to the ``INSTALLED_APPS``:
 
     .. code-block:: python
 
@@ -180,6 +185,45 @@ Modify your settings in the following way:
         {% thumbnail 'None3' "200x200" crop="center" as im %}
             <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" />
         {% endthumbnail %}
+
+django-imagekit
+^^^^^^^^^^^^^^^
+Integration with `django-imagekit
+<https://pypi.python.org/pypi/django-imagekit>`_.
+
+Modify your settings in the following way:
+
+(1) Add ``imagekit``, ``dummy_thumbnails`` and
+    ``dummy_thumbnails.contrib.thumbnailers.django_imagekit.generatorlibrary``
+    to the ``INSTALLED_APPS``:
+
+    .. code-block:: python
+
+        INSTALLED_APPS = [
+            # ...
+            'imagekit',
+            'dummy_thumbnails',
+            'dummy_thumbnails.contrib.thumbnailers.django_imagekit.generatorlibrary',
+            # ...
+        ]
+
+(2) If you are using the included public domain images, don't forget to collect
+    the static files and create a symlink:
+
+    .. code-block:: sh
+
+        ./manage.py collectstatic --noinput
+        ./manage.py dummy_thumbnails_symlink_dummy_images
+
+(3) Now the following would work:
+
+    .. code-block:: html
+
+        {% load imagekit %}
+
+        {% thumbnail '640x480' 'None1' %}
+        {% thumbnail '480x640' 'None2' %}
+        {% thumbnail '200x200' 'None3' %}
 
 Demo
 ====

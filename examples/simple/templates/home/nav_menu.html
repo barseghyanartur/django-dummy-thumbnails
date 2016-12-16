@@ -1,7 +1,5 @@
-{% extends "base.html" %}
 {% load i18n %}
 
-{% block nav-menu %}
 <ul class="button-group">
 
 <li><a href="{% url 'easy-thumbnails' %}" class="button easy-thumbnails">{% trans "easy-thumbnails" %}</a></li>
@@ -9,4 +7,3 @@
 <li><a href="{% url 'django-imagekit' %}" class="button django-imagekit">{% trans "django-imagekit" %}</a></li>
 
 </ul>
-{% endblock nav-menu %}

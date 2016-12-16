@@ -9,16 +9,16 @@ on.
 
 Must haves
 ----------
-- ``django-imagekit`` integration.
++ ``django-imagekit`` integration.
 + Add installable demo.
 
 Should haves
 ------------
-- Finish the concept of ``image importers``. Implement import from flickr as
-  a proof of concept.
 
 Could haves
 -----------
+- Finish the concept of ``image importers``. Implement import from flickr as
+  a proof of concept.
 
 Would haves
 -----------

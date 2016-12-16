@@ -1,0 +1,15 @@
+{% extends "home/base_site.html" %}
+{% load i18n %}
+
+{% load imagekit %}
+
+{% block main-content %}
+
+    {% thumbnail '640x480' 'None1' %}
+    {% thumbnail '480x640' 'None2' %}
+    {% thumbnail '200x200' 'None3' %}
+
+{% endblock main-content %}
+
+{% block sidebar-content %}
+{% endblock sidebar-content %}
