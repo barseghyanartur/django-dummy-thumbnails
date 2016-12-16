@@ -1,3 +1,9 @@
+"""
+Defaults module.
+
+- IMAGES_PATH: Path to random images.
+"""
+
 import os
 
 __title__ = 'dummy_thumbnails.defaults'

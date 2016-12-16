@@ -1,3 +1,9 @@
+"""
+Conf module.
+
+- get_setting: Get app setting.
+"""
+
 from django.conf import settings
 
 from . import defaults

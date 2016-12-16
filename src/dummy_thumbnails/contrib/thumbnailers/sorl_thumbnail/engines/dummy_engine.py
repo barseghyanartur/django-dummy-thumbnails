@@ -1,3 +1,13 @@
+"""
+sorl-thumbnail contrib module. Since thumbnail generation in sorl-thumbnail
+goes through thumbnail engine, we should make a new thumbnail engine for the
+thumbnail generation, which will replace broken thumbnails with dummy ones.
+In settings we set patched thumbnail engine in ``THUMBNAIL_ENGINE``
+setting.
+
+- DummyThumbnailsEngine: Dummy thumbnails engine for sorl-thumbnail.
+"""
+
 from __future__ import absolute_import
 
 from six import BytesIO

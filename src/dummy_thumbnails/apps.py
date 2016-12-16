@@ -1,3 +1,7 @@
+"""
+Apps.
+"""
+
 __title__ = 'dummy_thumbnails.apps'
 __author__ = 'Artur Barseghyan <artur.barseghyan@gmail.com>'
 __copyright__ = '2016 Artur Barseghyan'

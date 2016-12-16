@@ -1,3 +1,9 @@
+"""
+Dummy thumbnails for most popular Django thumbnail generators.
+
+- default_app_config: Default Django app config.
+"""
+
 __title__ = 'dummy_thumbnails'
 __version__ = '0.1.3'
 __author__ = 'Artur Barseghyan <artur.barseghyan@gmail.com>'

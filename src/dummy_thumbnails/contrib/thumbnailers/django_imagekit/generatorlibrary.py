@@ -1,3 +1,13 @@
+"""
+django-imagekit contrib module. Since thumbnail generation in django-imagekit
+goes through generators, we should make a new generator for the thumbnail
+generation, which will replace broken thumbnails with dummy ones. The
+default generator is being replaced (unregistered) here with patched one
+``DummyThumbnail`` (registered).
+
+- DummyThumbnail: Dummy thumbnails generator for django-imagekit.
+"""
+
 from imagekit.cachefiles import ImageCacheFile
 from imagekit.processors import Thumbnail as ThumbnailProcessor
 from imagekit.registry import register, unregister

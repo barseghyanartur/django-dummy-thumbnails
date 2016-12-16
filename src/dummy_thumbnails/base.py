@@ -1,3 +1,11 @@
+"""
+Base module.
+
+- ABSOLUTE_IMAGES_PATH: Path to random images.
+- OPTIONS: List of images to choose from.
+- get_random_image: Get a random image from the path given.
+"""
+
 import os
 import glob
 import random

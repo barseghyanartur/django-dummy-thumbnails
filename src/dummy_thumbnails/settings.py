@@ -1,3 +1,9 @@
+"""
+Settings module.
+
+- IMAGES_PATH: Path to random images.
+"""
+
 from .conf import get_setting
 
 __title__ = 'dummy_thumbnails.settings'

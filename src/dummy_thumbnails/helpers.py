@@ -1,3 +1,9 @@
+"""
+Helpers module.
+
+- prepare_dirs_and_symlinks: Prepare dirs and symlinks.
+"""
+
 import os
 
 from django.conf import settings

@@ -1,3 +1,9 @@
+"""
+Base tests module.
+
+- setup_app: Setup the app, collect the static, mark app setup as completed.
+"""
+
 from django.core.management import call_command
 
 from .base import (

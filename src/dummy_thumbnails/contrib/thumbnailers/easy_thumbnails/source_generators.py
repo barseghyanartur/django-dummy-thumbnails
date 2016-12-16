@@ -1,3 +1,13 @@
+"""
+easy-thumbnails contrib module. Since thumbnail generation in easy-thumbnails
+goes through source generators, we should make a new source generator for the
+thumbnail generation, which will replace broken thumbnails with dummy ones.
+In settings we set patched source generator in ``THUMBNAIL_SOURCE_GENERATORS``
+setting.
+
+- dummy_thumbnail: Dummy thumbnails generator for easy-thumbnails.
+"""
+
 import os
 
 from django.conf import settings as django_settings

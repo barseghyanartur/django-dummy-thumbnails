@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+"""
+Test the core package.
+
+- DummyThumbnailsCoreTest: Test core functionality.
+"""
 
 import unittest
 

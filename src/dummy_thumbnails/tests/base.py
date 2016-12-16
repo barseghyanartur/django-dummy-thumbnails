@@ -1,3 +1,14 @@
+"""
+Base tests module.
+
+- log_info: Method decorator, logs info about the method (name, return value).
+- LOG_INFO: Flag.
+- app_setup: Setup the app.
+- skip: Method decorator. If used, tests is skipped.
+- is_app_setup_completed: Check if app setup has been completed.
+- mark_app_setup_as_completed: Mark the app setup as completed.
+"""
+
 from __future__ import print_function
 
 import logging

@@ -1,3 +1,10 @@
+"""
+Base tests module.
+
+- Command: Management command. Prepare the dirs and create symlinks for
+  testing purposes.
+"""
+
 from django.core.management.base import BaseCommand
 
 from ...helpers import prepare_dirs_and_symlinks

@@ -83,8 +83,8 @@ Replace broken images with dummy ones
 That's what it's all about - replacing the broken images with dummy ones.
 
 .. note:: You should **never** use this in production. All the changes
-          mentioned above are supposed to be applied to **development**
-          settings only.
+          mentioned above and below are supposed to be applied to
+          **development** settings only.
 
 Supported thumbnailers
 ~~~~~~~~~~~~~~~~~~~~~~
