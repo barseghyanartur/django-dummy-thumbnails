@@ -30,10 +30,10 @@ def log_info(func):
         """Inner."""
         result = func(self, *args, **kwargs)
 
-        logger.info('\n{}'.format(func.__name__))
+        logger.info('\n%s', func.__name__)
         logger.info('============================')
         if func.__doc__:
-            logger.info('""" {} """'.format(func.__doc__.strip()))
+            logger.info('""" %s """', func.__doc__.strip())
         logger.info('----------------------------')
         if result is not None:
             logger.info(result)
