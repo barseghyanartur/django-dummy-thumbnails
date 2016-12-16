@@ -48,11 +48,11 @@ Installation
 
         DUMMY_THUMBNAILS_IMAGES_PATH = '/home/path/to/images/'
 
-    This should be a directory inside your media (or static) directory of your
-    Django project. Otherwise Django would raise a ``SuspiciousOperation``
-    exception. In order not to duplicate tons of files for each project, you
-    are advised to create symlinks to the images directory in the media (or
-    static) directory of your Django project.
+    This should be a directory inside your media directory of your Django
+    project. Otherwise Django would raise a ``SuspiciousOperation`` exception.
+    In order not to duplicate tons of files for each project, you are advised
+    to create symlinks to the images directory in the media directory of your
+    Django project.
 
     .. code-block:: sh
 
