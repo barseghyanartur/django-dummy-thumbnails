@@ -50,6 +50,9 @@ class DummyThumbnailsCoreTest(TestCase):
             'img',
             attrs={'class': 'thumbnail'}
         )
+        self.assertTrue(
+            len(images) > 0, "Number of images should be greater that 0."
+        )
         for image in images:
             source = image.get('src')
             self.assertIsNotNone(source)
