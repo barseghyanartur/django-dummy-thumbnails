@@ -5,7 +5,7 @@ Dummy thumbnails for most popular Django thumbnail generators.
 """
 
 __title__ = 'dummy_thumbnails'
-__version__ = '0.1.4'
+__version__ = '0.1.5'
 __author__ = 'Artur Barseghyan <artur.barseghyan@gmail.com>'
 __copyright__ = '2016 Artur Barseghyan'
 __license__ = 'GPL 2.0/LGPL 2.1'
