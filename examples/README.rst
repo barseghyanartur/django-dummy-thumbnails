@@ -67,8 +67,4 @@ written for Ubuntu/Debian, but may work on other Linux distributions as well.
 
 .. code-block:: text
 
-        django-dummy-thumbnails:
-
-        - URL: http://127.0.0.1:8001/forms/builder/
-        - Admin username: test_admin
-        - Admin password: test
+        - URL: http://127.0.0.1:8001/
