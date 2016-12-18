@@ -29,12 +29,10 @@ def get_setting(setting, override=None):
     :return: Setting value.
     """
     attr_name = 'DUMMY_THUMBNAILS_{0}'.format(setting)
-    value = None
     if hasattr(settings, attr_name):
-        value = getattr(settings, attr_name)
+        return getattr(settings, attr_name)
     else:
         if hasattr(defaults, setting):
-            value = getattr(defaults, setting)
+            return getattr(defaults, setting)
         else:
             return override
-    return value

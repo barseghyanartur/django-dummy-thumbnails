@@ -45,7 +45,7 @@ class DummyThumbnailsCoreTest(TestCase):
         """Test if images are not empty."""
         response = self.client.get(url)
         response_content = getattr(response, 'content', "")
-        soup = BeautifulSoup(response_content)
+        soup = BeautifulSoup(response_content, "html.parser")
         images = soup.find_all(
             'img',
             attrs={'class': 'thumbnail'}
