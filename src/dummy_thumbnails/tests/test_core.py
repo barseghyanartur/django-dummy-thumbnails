@@ -9,8 +9,8 @@ import unittest
 
 from bs4 import BeautifulSoup
 
-from django.test import TestCase, Client
 from django.core.urlresolvers import reverse
+from django.test import TestCase, Client
 
 from ..conf import get_setting
 from ..base import get_random_image
@@ -67,9 +67,9 @@ class DummyThumbnailsCoreTest(TestCase):
         self.assertEqual(images_path_default, default_images_path)
 
     @log_info
-    def test_03_test_easy_thumbnails(self):
-        """Test ``easy_thumbnails``."""
-        return self.__test_images(reverse('easy-thumbnails'))
+    def test_03_test_django_imagekit(self):
+        """Test ``django-imagekit``."""
+        return self.__test_images(reverse('django-imagekit'))
 
     @log_info
     def test_04_test_sorl_thumbnail(self):
@@ -77,9 +77,9 @@ class DummyThumbnailsCoreTest(TestCase):
         return self.__test_images(reverse('sorl-thumbnail'))
 
     @log_info
-    def test_05_test_django_imagekit(self):
-        """Test ``django-imagekit``."""
-        return self.__test_images(reverse('django-imagekit'))
+    def test_05_test_easy_thumbnails(self):
+        """Test ``easy_thumbnails``."""
+        return self.__test_images(reverse('easy-thumbnails'))
 
 
 if __name__ == '__main__':

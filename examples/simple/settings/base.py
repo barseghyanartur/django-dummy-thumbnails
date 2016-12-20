@@ -136,7 +136,41 @@ if versions.DJANGO_GTE_1_10:
                     'django.template.loaders.eggs.Loader',
                 ],
                 'libraries': {
-                    'sorl_thumbnail': 'sorl.thumbnail.templatetags.thumbnail',
+                    'sorl_thumbnail':
+                        'sorl.thumbnail.templatetags.thumbnail',
+                    'easy_thumbnails':
+                        'easy_thumbnails.templatetags.thumbnail',
+                },
+                'debug': DEBUG_TEMPLATE,
+            }
+        },
+    ]
+elif versions.DJANGO_GTE_1_9:
+    TEMPLATES = [
+        {
+            'BACKEND': 'django.template.backends.django.DjangoTemplates',
+            # 'APP_DIRS': True,
+            'DIRS': [PROJECT_DIR(os.path.join('..', 'templates'))],
+            'OPTIONS': {
+                'context_processors': [
+                    "django.contrib.auth.context_processors.auth",
+                    "django.template.context_processors.debug",
+                    "django.template.context_processors.i18n",
+                    "django.template.context_processors.media",
+                    "django.template.context_processors.static",
+                    "django.template.context_processors.tz",
+                    "django.contrib.messages.context_processors.messages",
+                    "django.template.context_processors.request",
+                    # "context_processors.testing",  # Testing
+                ],
+                'loaders': [
+                    'django.template.loaders.filesystem.Loader',
+                    'django.template.loaders.app_directories.Loader',
+                    'django.template.loaders.eggs.Loader',
+                ],
+                'libraries': {
+                    'sorl_thumbnail':
+                        'sorl.thumbnail.templatetags.thumbnail',
                     'easy_thumbnails':
                         'easy_thumbnails.templatetags.thumbnail',
                 },
@@ -167,11 +201,12 @@ elif versions.DJANGO_GTE_1_8:
                     'django.template.loaders.app_directories.Loader',
                     'django.template.loaders.eggs.Loader',
                 ],
-                'libraries': {
-                    'sorl_thumbnail': 'sorl.thumbnail.templatetags.thumbnail',
-                    'easy_thumbnails':
-                        'easy_thumbnails.templatetags.thumbnail',
-                },
+                # 'libraries': {
+                #     'sorl_thumbnail':
+                #         'sorl.thumbnail.templatetags.thumbnail',
+                #     'easy_thumbnails':
+                #         'easy_thumbnails.templatetags.thumbnail',
+                # },
                 'debug': DEBUG_TEMPLATE,
             }
         },
@@ -238,9 +273,9 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
 
     # What we want to test it with
-    'easy_thumbnails',
-    'sorl.thumbnail',
     'imagekit',
+    'sorl.thumbnail',
+    'easy_thumbnails',
 
     # django-dummy-thumbnails
     'dummy_thumbnails',

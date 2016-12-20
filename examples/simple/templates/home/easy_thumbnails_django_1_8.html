@@ -1,0 +1,15 @@
+{% extends "home/base_site.html" %}
+{% load i18n %}
+
+{% load thumbnail %}
+
+{% block main-content %}
+
+    <img src="{% thumbnail 'None1' 640x480 crop %}" alt="" class="thumbnail" />
+    <img src="{% thumbnail 'None2' 480x640 crop %}" alt="" class="thumbnail" />
+    <img src="{% thumbnail 'None3' 200x200 crop %}" alt="" class="thumbnail" />
+
+{% endblock main-content %}
+
+{% block sidebar-content %}
+{% endblock sidebar-content %}

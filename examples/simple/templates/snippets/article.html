@@ -1,4 +1,4 @@
-{% load sorl_thumbnail %}
+{% load imagekit %}
 
 <article>
 <h3><a href="#">Generate dummy thumbnails with most popular Django thumbnail generators.</a></h3>
@@ -12,9 +12,7 @@
     problems in the shortest way possible, with least efforts possible.</p>
 </div>
 <div class="large-6 columns">
-{% thumbnail 'None4' "400x240" crop="center" as im %}
-    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="thumbnail" />
-{% endthumbnail %}
+{% thumbnail '400x240' 'None4' -- alt="" class="thumbnail" %}
 {#<img src="http://placehold.it/400x240&text=[img]"/>#}
 </div>
 </div>
