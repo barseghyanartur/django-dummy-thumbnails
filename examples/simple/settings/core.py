@@ -13,8 +13,8 @@ def project_dir(base):
     )
 
 
-def gettext(s):
-    return s
+def gettext(val):
+    return val
 
 
 PROJECT_DIR = project_dir

@@ -16,6 +16,9 @@ Prerequisites
 - Django 1.8, 1.9, 1.10
 - Python 2.7, 3.4, 3.5
 
+Although `django-dummy-thumbnails` is not being tested against older versions
+of Django, tests do pass with Django versions 1.5, 1.6 and 1.7.
+
 Installation
 ============
 (1) Install in your virtual environment
@@ -92,33 +95,28 @@ Most popular image thumbnailers for Django (`django-imagekit`_,
 `sorl-thumbnail`_ and `easy-thumbnails`_) are supported. If you can't find
 your favourite thumbnailer, open an issue or consider making a pull request.
 
-easy-thumbnails
+django-imagekit
 ^^^^^^^^^^^^^^^
-Integration with `easy-thumbnails
-<https://pypi.python.org/pypi/easy-thumbnails>`_.
+Integration with `django-imagekit
+<https://pypi.python.org/pypi/django-imagekit>`_.
 
 Modify your settings in the following way:
 
-(1) Add ``easy_thumbnails`` and ``dummy_thumbnails`` to the ``INSTALLED_APPS``:
+(1) Add ``imagekit``, ``dummy_thumbnails`` and
+    ``dummy_thumbnails.contrib.thumbnailers.django_imagekit.generatorlibrary``
+    to the ``INSTALLED_APPS``:
 
     .. code-block:: python
 
         INSTALLED_APPS = [
             # ...
-            'easy_thumbnails',
+            'imagekit',
             'dummy_thumbnails',
+            'dummy_thumbnails.contrib.thumbnailers.django_imagekit.generatorlibrary',
             # ...
         ]
 
-(2) Add dummy thumbnail generator to ``THUMBNAIL_SOURCE_GENERATORS``:
-
-    .. code-block:: python
-
-        THUMBNAIL_SOURCE_GENERATORS = (
-            'dummy_thumbnails.contrib.thumbnailers.easy_thumbnails.source_generators.dummy_thumbnail',
-        )
-
-(3) If you are using the included public domain images, don't forget to collect
+(2) If you are using the included public domain images, don't forget to collect
     the static files and create a symlink:
 
     .. code-block:: sh
@@ -126,15 +124,15 @@ Modify your settings in the following way:
         ./manage.py collectstatic --noinput
         ./manage.py dummy_thumbnails_symlink_dummy_images
 
-(4) Now the following would work:
+(3) Now the following would work:
 
     .. code-block:: html
 
-        {% load thumbnail %}
+        {% load imagekit %}
 
-        <img src="{% thumbnail 'None1' 640x480 crop %}" alt="" />
-        <img src="{% thumbnail 'None2' 480x640 crop %}" alt="" />
-        <img src="{% thumbnail 'None3' 200x200 crop %}" alt="" />
+        {% thumbnail '640x480' 'None1' %}
+        {% thumbnail '480x640' 'None2' %}
+        {% thumbnail '200x200' 'None3' %}
 
 sorl-thumbnail
 ^^^^^^^^^^^^^^
@@ -186,28 +184,33 @@ Modify your settings in the following way:
             <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" />
         {% endthumbnail %}
 
-django-imagekit
+easy-thumbnails
 ^^^^^^^^^^^^^^^
-Integration with `django-imagekit
-<https://pypi.python.org/pypi/django-imagekit>`_.
+Integration with `easy-thumbnails
+<https://pypi.python.org/pypi/easy-thumbnails>`_.
 
 Modify your settings in the following way:
 
-(1) Add ``imagekit``, ``dummy_thumbnails`` and
-    ``dummy_thumbnails.contrib.thumbnailers.django_imagekit.generatorlibrary``
-    to the ``INSTALLED_APPS``:
+(1) Add ``easy_thumbnails`` and ``dummy_thumbnails`` to the ``INSTALLED_APPS``:
 
     .. code-block:: python
 
         INSTALLED_APPS = [
             # ...
-            'imagekit',
+            'easy_thumbnails',
             'dummy_thumbnails',
-            'dummy_thumbnails.contrib.thumbnailers.django_imagekit.generatorlibrary',
             # ...
         ]
 
-(2) If you are using the included public domain images, don't forget to collect
+(2) Add dummy thumbnail generator to ``THUMBNAIL_SOURCE_GENERATORS``:
+
+    .. code-block:: python
+
+        THUMBNAIL_SOURCE_GENERATORS = (
+            'dummy_thumbnails.contrib.thumbnailers.easy_thumbnails.source_generators.dummy_thumbnail',
+        )
+
+(3) If you are using the included public domain images, don't forget to collect
     the static files and create a symlink:
 
     .. code-block:: sh
@@ -215,15 +218,15 @@ Modify your settings in the following way:
         ./manage.py collectstatic --noinput
         ./manage.py dummy_thumbnails_symlink_dummy_images
 
-(3) Now the following would work:
+(4) Now the following would work:
 
     .. code-block:: html
 
-        {% load imagekit %}
+        {% load thumbnail %}
 
-        {% thumbnail '640x480' 'None1' %}
-        {% thumbnail '480x640' 'None2' %}
-        {% thumbnail '200x200' 'None3' %}
+        <img src="{% thumbnail 'None1' 640x480 crop %}" alt="" />
+        <img src="{% thumbnail 'None2' 480x640 crop %}" alt="" />
+        <img src="{% thumbnail 'None3' 200x200 crop %}" alt="" />
 
 Demo
 ====

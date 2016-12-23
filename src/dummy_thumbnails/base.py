@@ -6,8 +6,8 @@ Base module.
 - get_random_image: Get a random image from the path given.
 """
 
-import os
 import glob
+import os
 import random
 
 from django.conf import settings

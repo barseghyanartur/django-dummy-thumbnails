@@ -11,9 +11,8 @@ setting.
 from __future__ import absolute_import
 
 from six import BytesIO
-
-from sorl.thumbnail.images import ImageFile
 from sorl.thumbnail.engines.pil_engine import Engine as PILEngine
+from sorl.thumbnail.images import ImageFile
 
 from .....base import get_random_image
 

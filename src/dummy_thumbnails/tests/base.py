@@ -20,14 +20,14 @@ __license__ = 'GPL 2.0/LGPL 2.1'
 __all__ = (
     'LOG_INFO',
     'log_info',
-    'app_setup',
+    'APP_SETUP',
     'skip',
     'is_app_setup_completed',
     'mark_app_setup_as_completed',
 )
 
 
-logger = logging.getLogger(__name__)
+LOGGER = logging.getLogger(__name__)
 
 LOG_INFO = True
 
@@ -41,14 +41,14 @@ def log_info(func):
         """Inner."""
         result = func(self, *args, **kwargs)
 
-        logger.info('\n%s', func.__name__)
-        logger.info('============================')
+        LOGGER.info('\n%s', func.__name__)
+        LOGGER.info('============================')
         if func.__doc__:
-            logger.info('""" %s """', func.__doc__.strip())
-        logger.info('----------------------------')
+            LOGGER.info('""" %s """', func.__doc__.strip())
+        LOGGER.info('----------------------------')
         if result is not None:
-            logger.info(result)
-        logger.info('\n')
+            LOGGER.info(result)
+        LOGGER.info('\n')
 
         return result
     return inner
@@ -77,14 +77,14 @@ class AppSetup(object):
         self.is_done = False
 
 
-app_setup = AppSetup()
+APP_SETUP = AppSetup()
 
 
 def is_app_setup_completed():
     """Check if app setup is completed."""
-    return app_setup.is_done is True
+    return APP_SETUP.is_done is True
 
 
 def mark_app_setup_as_completed():
     """Mark app setup as completed."""
-    app_setup.is_done = True
+    APP_SETUP.is_done = True

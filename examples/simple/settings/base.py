@@ -282,7 +282,7 @@ INSTALLED_APPS = [
     'dummy_thumbnails.contrib.thumbnailers.django_imagekit.generatorlibrary',
 
     # Other project specific apps
-    # 'dummy_thumbnails.tests.foo',  # Test app
+    'bar',  # Test app
 ]
 
 LOGIN_URL = '/en/accounts/login/'

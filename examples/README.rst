@@ -51,7 +51,7 @@ written for Ubuntu/Debian, but may work on other Linux distributions as well.
     cp examples/simple/settings/local_settings.example examples/simple/settings/local_settings.py
 
 (8) Run the commands to sync database, collect static files, make necessary
-    symlinks and run the server.
+    symlinks.
 
     .. code-block:: sh
 
@@ -61,10 +61,24 @@ written for Ubuntu/Debian, but may work on other Linux distributions as well.
 
         ./manage.py dummy_thumbnails_symlink_dummy_images
 
-        python examples/simple/manage.py runserver 0.0.0.0:8001 --traceback -v 3
+        python examples/simple/manage.py runserver 0.0.0.0:8000 --traceback -v 3
 
-(9) Open your browser and test the app.
+(9) Run the server.
 
-.. code-block:: text
+    Using Django's own runner.
 
-        - URL: http://127.0.0.1:8001/
+    .. code-block:: sh
+
+        python examples/simple/manage.py runserver 0.0.0.0:8000 --traceback -v 3
+
+    Or using gunicorn:
+
+    .. code-block:: sh
+
+        gunicorn examples.simple.wsgi
+
+(10) Open your browser and test the app.
+
+    .. code-block:: text
+
+            - URL: http://127.0.0.1:8000/

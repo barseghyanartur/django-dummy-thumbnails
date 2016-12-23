@@ -4,6 +4,7 @@ Sphinx
 docutils
 ipdb
 ipython
+gunicorn
 
 # Style checkers
 pydocstyle

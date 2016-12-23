@@ -10,10 +10,10 @@ import unittest
 from bs4 import BeautifulSoup
 
 from django.core.urlresolvers import reverse
-from django.test import TestCase, Client
+from django.test import Client, TestCase
 
-from ..conf import get_setting
 from ..base import get_random_image
+from ..conf import get_setting
 from ..helpers import prepare_dirs_and_symlinks
 
 from .base import log_info
