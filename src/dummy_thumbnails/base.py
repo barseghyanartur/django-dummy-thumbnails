@@ -27,7 +27,6 @@ else:
 
 if not ABSOLUTE_IMAGES_PATH.endswith(os.path.sep):
     ABSOLUTE_IMAGES_PATH = os.path.join(ABSOLUTE_IMAGES_PATH, '')
-ABSOLUTE_IMAGES_PATH = os.path.join(ABSOLUTE_IMAGES_PATH, '*')
 
 OPTIONS = [filename for filename in os.listdir(ABSOLUTE_IMAGES_PATH)
            if os.path.isfile(os.path.join(ABSOLUTE_IMAGES_PATH, filename))]
