@@ -35,4 +35,4 @@ OPTIONS = [filename for filename in os.listdir(ABSOLUTE_IMAGES_PATH)
 def get_random_image():
     """Get random image."""
     random_image = random.randint(0, len(OPTIONS) - 1)
-    return OPTIONS[random_image]
+    return os.path.join(ABSOLUTE_IMAGES_PATH, OPTIONS[random_image])
