@@ -48,7 +48,7 @@ def dummy_thumbnail(source, exif_orientation=True, **options):
     # File objects.
     media_root = os.path.abspath(django_settings.MEDIA_ROOT)
 
-    if not (source and (os.path.exists(source.path)
+    if not (source and hasattr(source, 'path') and (os.path.exists(source.path)
                         or os.path.isfile(source.path))):
         random_image = get_random_image()
         random_file = open(random_image)
