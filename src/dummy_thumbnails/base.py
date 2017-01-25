@@ -5,13 +5,9 @@ Base module.
 - OPTIONS: List of images to choose from.
 - get_random_image: Get a random image from the path given.
 """
-
-import glob
 import os
 import random
-
 from django.conf import settings
-
 from .settings import IMAGES_PATH
 
 __title__ = 'dummy_thumbnails.base'
@@ -24,7 +20,6 @@ __all__ = (
     'get_random_image',
 )
 
-
 if os.path.isabs(IMAGES_PATH):
     ABSOLUTE_IMAGES_PATH = IMAGES_PATH[:]
 else:
@@ -32,12 +27,12 @@ else:
 
 if not ABSOLUTE_IMAGES_PATH.endswith(os.path.sep):
     ABSOLUTE_IMAGES_PATH = os.path.join(ABSOLUTE_IMAGES_PATH, '')
-ABSOLUTE_IMAGES_PATH = os.path.join(ABSOLUTE_IMAGES_PATH, '*')
 
-OPTIONS = glob.glob(ABSOLUTE_IMAGES_PATH)
+OPTIONS = [filename for filename in os.listdir(ABSOLUTE_IMAGES_PATH)
+           if os.path.isfile(os.path.join(ABSOLUTE_IMAGES_PATH, filename))]
 
 
 def get_random_image():
     """Get random image."""
     random_image = random.randint(0, len(OPTIONS) - 1)
-    return OPTIONS[random_image]
+    return os.path.join(ABSOLUTE_IMAGES_PATH, OPTIONS[random_image])
