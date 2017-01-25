@@ -17,8 +17,10 @@ Should haves
 
 Could haves
 -----------
-- Finish the concept of ``image importers``. Implement import from flickr as
-  a proof of concept.
+- Finish the concept of ``image importers``.
+- Implement [``dummyimage_importer``](https://dummyimage.com/) as a proof of
+  concept.
 
 Would haves
 -----------
+- Implement ``flick_images_importer`` as another proof of concept.
