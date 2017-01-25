@@ -14,7 +14,6 @@ import os
 from django.conf import settings as django_settings
 
 from easy_thumbnails.utils import exif_orientation as utils_exif_orientation
-from easy_thumbnails.files import ThumbnailFile
 
 from six import BytesIO
 
@@ -75,6 +74,10 @@ def dummy_thumbnail(source, exif_orientation=True, **options):
 
 def load_random_file(media_root):
     """Load random file."""
+    # We should load ``ThumbnailFile`` here, since otherwise we might get
+    # ``AppRegistryNotReady`` exception.
+    from easy_thumbnails.files import ThumbnailFile
+
     random_image = get_random_image()
     random_file = codecs.open(random_image)
     source = ThumbnailFile(random_file.name, random_file)
