@@ -15,6 +15,13 @@ are used for versioning (schema follows below):
   0.3.4 to 0.4).
 - All backwards incompatible changes are mentioned in this document.
 
+0.1.7
+-----
+2017-01-25
+
+- Minor fixes. Skip sub directories when listing files 
+  in ``base.get_random_image``.
+
 0.1.6
 -----
 2016-12-23
