@@ -237,7 +237,7 @@ is broken.
 The recommended approach is to use a management command
 ``dummy_thumbnails_verify_dummy_images``, which has been written in order to
 verify the dummy images and identify possible problems. It also lets you
-remove broken images.
+remove broken dummy images.
 
 To remove broken dummy images with confirmation, type:
 
