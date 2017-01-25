@@ -29,7 +29,7 @@ Installation
 
         pip install django-dummy-thumbnails
 
-    Latest stable version from github:
+    Latest stable version from GitHub:
 
     .. code-block:: sh
 
