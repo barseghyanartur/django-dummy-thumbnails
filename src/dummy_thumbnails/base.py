@@ -7,7 +7,9 @@ Base module.
 """
 import os
 import random
+
 from django.conf import settings
+
 from .settings import IMAGES_PATH
 
 __title__ = 'dummy_thumbnails.base'
@@ -32,7 +34,15 @@ OPTIONS = [filename for filename in os.listdir(ABSOLUTE_IMAGES_PATH)
            if os.path.isfile(os.path.join(ABSOLUTE_IMAGES_PATH, filename))]
 
 
-def get_random_image():
-    """Get random image."""
+def get_random_image(abspath=True):
+    """Get random image.
+
+    :param bool abspath: If set to True, absolute path is returned.
+    """
     random_image = random.randint(0, len(OPTIONS) - 1)
-    return os.path.join(ABSOLUTE_IMAGES_PATH, OPTIONS[random_image])
+    image_path = OPTIONS[random_image]
+
+    if abspath:
+        return os.path.join(ABSOLUTE_IMAGES_PATH, image_path)
+    else:
+        return image_path
