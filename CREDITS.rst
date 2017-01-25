@@ -9,5 +9,5 @@ Contributors
 Thanks to the following people for their contributions:
 
 - `Haike Zegwaard
-  <https://github.com/barseghyanartur/django-fobi/commits/master?author=haikezegwaard>`_
+  <https://github.com/barseghyanartur/django-dummy-thumbnails/commits/master?author=haikezegwaard>`_
   for number of fixes.
