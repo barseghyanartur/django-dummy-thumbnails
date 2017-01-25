@@ -5,16 +5,24 @@ Base module.
 - OPTIONS: List of images to choose from.
 - get_random_image: Get a random image from the path given.
 """
+import codecs
 import os
 import random
 
 from django.conf import settings
 
-from .settings import IMAGES_PATH
+from six import BytesIO
+
+from .settings import IMAGES_PATH, VERIFY_IMAGES
+
+try:
+    from PIL import Image
+except ImportError:
+    import Image
 
 __title__ = 'dummy_thumbnails.base'
 __author__ = 'Artur Barseghyan <artur.barseghyan@gmail.com>'
-__copyright__ = '2016 Artur Barseghyan'
+__copyright__ = '2016-2017 Artur Barseghyan'
 __license__ = 'GPL 2.0/LGPL 2.1'
 __all__ = (
     'ABSOLUTE_IMAGES_PATH',
@@ -30,8 +38,29 @@ else:
 if not ABSOLUTE_IMAGES_PATH.endswith(os.path.sep):
     ABSOLUTE_IMAGES_PATH = os.path.join(ABSOLUTE_IMAGES_PATH, '')
 
-OPTIONS = [filename for filename in os.listdir(ABSOLUTE_IMAGES_PATH)
-           if os.path.isfile(os.path.join(ABSOLUTE_IMAGES_PATH, filename))]
+OPTIONS = []
+
+if VERIFY_IMAGES:
+    for filename in os.listdir(ABSOLUTE_IMAGES_PATH):
+        abs_path = os.path.join(ABSOLUTE_IMAGES_PATH, filename)
+        if os.path.isfile(abs_path):
+            image_file = codecs.open(abs_path, mode='rb')
+            buf = BytesIO(image_file.read())
+            image_file.close()
+            try:
+                image = Image.open(buf)
+
+                if image.verify():
+                    OPTIONS.append(abs_path)
+                else:
+                    continue
+            except IOError:
+                continue
+else:
+    for filename in os.listdir(ABSOLUTE_IMAGES_PATH):
+        abs_path = os.path.join(ABSOLUTE_IMAGES_PATH, filename)
+        if os.path.isfile(abs_path):
+            OPTIONS.append(abs_path)
 
 
 def get_random_image(abspath=True):

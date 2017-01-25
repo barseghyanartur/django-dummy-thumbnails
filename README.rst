@@ -14,7 +14,7 @@ possible, with least efforts possible.
 Prerequisites
 =============
 - Django 1.8, 1.9, 1.10
-- Python 2.7, 3.4, 3.5, PyPy
+- Python 2.7, 3.4, 3.5
 
 Although `django-dummy-thumbnails` is not being tested against older versions
 of Django, tests do pass with Django versions 1.5, 1.6 and 1.7.
@@ -29,7 +29,7 @@ Installation
 
         pip install django-dummy-thumbnails
 
-    Latest stable version from github:
+    Latest stable version from GitHub:
 
     .. code-block:: sh
 
@@ -227,6 +227,34 @@ Modify your settings in the following way:
         <img src="{% thumbnail 'None1' 640x480 crop %}" alt="" />
         <img src="{% thumbnail 'None2' 480x640 crop %}" alt="" />
         <img src="{% thumbnail 'None3' 200x200 crop %}" alt="" />
+
+Dealing with broken or invalid dummy images
+===========================================
+Of course, it's always better to have a good working set of dummy images.
+However, it might happen that for some reason one of your dummy images
+is broken.
+
+The recommended approach is to use a management command
+``dummy_thumbnails_verify_dummy_images``, which has been written in order to
+verify the dummy images and identify possible problems. It also lets you
+remove broken images.
+
+To remove broken dummy images with confirmation, type:
+
+.. code-block:: sh
+
+    ./manage.py dummy_thumbnails_verify_dummy_images
+
+To remove broken dummy images without confirmation, type:
+
+.. code-block:: sh
+
+    ./manage.py dummy_thumbnails_verify_dummy_images --noinput
+
+Another way to avoid failures is to set the value of
+``DUMMY_THUMBNAILS_VERIFY_IMAGES`` to True in your project settings. Beware,
+that this slows down the start up time of your Django project, although does
+not slow down further rendering of the images.
 
 Demo
 ====

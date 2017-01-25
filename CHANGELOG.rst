@@ -21,6 +21,7 @@ are used for versioning (schema follows below):
 
 - Minor fixes. Skip sub directories when listing files 
   in ``base.get_random_image``.
+- Make it possible to detect and remove broken dummy images.
 
 0.1.6
 -----

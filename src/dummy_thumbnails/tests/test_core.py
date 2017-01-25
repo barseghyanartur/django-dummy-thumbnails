@@ -9,6 +9,7 @@ import unittest
 
 from bs4 import BeautifulSoup
 
+from django.core.management import call_command
 from django.core.urlresolvers import reverse
 from django.test import Client, TestCase
 
@@ -21,7 +22,7 @@ from .helpers import setup_app
 
 __title__ = 'dummy_thumbnails.tests.test_core'
 __author__ = 'Artur Barseghyan <artur.barseghyan@gmail.com>'
-__copyright__ = '2016 Artur Barseghyan'
+__copyright__ = '2016-2017 Artur Barseghyan'
 __license__ = 'GPL 2.0/LGPL 2.1'
 __all__ = ('DummyThumbnailsCoreTest',)
 
@@ -80,6 +81,23 @@ class DummyThumbnailsCoreTest(TestCase):
     def test_05_test_easy_thumbnails(self):
         """Test ``easy_thumbnails``."""
         return self.__test_images(reverse('easy-thumbnails'))
+
+    @log_info
+    def test_06_management_command_symlink_dummy_images(self):
+        """Test ``dummy_thumbnails_symlink_dummy_images`` command."""
+        call_command(
+            'dummy_thumbnails_symlink_dummy_images',
+            verbosity=3
+        )
+
+    @log_info
+    def test_07_management_command_verify_dummy_images(self):
+        """Test ``dummy_thumbnails_verify_dummy_images`` command."""
+        call_command(
+            'dummy_thumbnails_verify_dummy_images',
+            verbosity=3,
+            interactive=False
+        )
 
 
 if __name__ == '__main__':

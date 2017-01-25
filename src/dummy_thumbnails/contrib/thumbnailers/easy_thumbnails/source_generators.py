@@ -8,6 +8,7 @@ setting.
 - dummy_thumbnail: Dummy thumbnails generator for easy-thumbnails.
 """
 
+import codecs
 import os
 
 from django.conf import settings as django_settings
@@ -27,7 +28,7 @@ except ImportError:
 __title__ = 'dummy_thumbnails.contrib.thumbnailers.easy_thumbnails.' \
             'source_generators'
 __author__ = 'Artur Barseghyan <artur.barseghyan@gmail.com>'
-__copyright__ = '2016 Artur Barseghyan'
+__copyright__ = '2016-2017 Artur Barseghyan'
 __license__ = 'GPL 2.0/LGPL 2.1'
 __all__ = (
     'dummy_thumbnail',
@@ -50,22 +51,19 @@ def dummy_thumbnail(source, exif_orientation=True, **options):
     media_root = os.path.abspath(django_settings.MEDIA_ROOT)
 
     if not (source and hasattr(source, 'path') and (os.path.exists(source.path)
-                        or os.path.isfile(source.path))):
+            or os.path.isfile(source.path))):
         source = load_random_file(media_root)
 
     buf = BytesIO(source.read())
 
+    image = Image.open(buf)
     # Fully load the image now to catch any problems with the image contents.
     try:
-        image = Image.open(buf)
         # An "Image file truncated" exception can occur for some images that
         # are still mostly valid -- we'll swallow the exception.
         image.load()
     except IOError:
-        # Try again, loading another file
-        source = load_random_file(media_root)
-        buf = BytesIO(source.read())
-        image = Image.open(buf)
+        pass
 
     # Try a second time to catch any other potential exceptions.
     image.load()
@@ -76,8 +74,9 @@ def dummy_thumbnail(source, exif_orientation=True, **options):
 
 
 def load_random_file(media_root):
+    """Load random file."""
     random_image = get_random_image()
-    random_file = open(random_image)
+    random_file = codecs.open(random_image)
     source = ThumbnailFile(random_file.name, random_file)
     source.name = source.file.name.replace(media_root, '')[1:]
     return source
