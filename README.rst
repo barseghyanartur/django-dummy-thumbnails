@@ -237,15 +237,15 @@ is broken.
 The recommended approach is to use a management command
 ``dummy_thumbnails_verify_dummy_images``, which has been written in order to
 verify the dummy images and identify possible problems. It also lets you
-remove broken dummy images.
+remove broken/invalid dummy images.
 
-To remove broken dummy images with confirmation, type:
+To remove broken/invalid dummy images with confirmation, type:
 
 .. code-block:: sh
 
     ./manage.py dummy_thumbnails_verify_dummy_images
 
-To remove broken dummy images without confirmation, type:
+To remove broken/invalid dummy images without confirmation, type:
 
 .. code-block:: sh
 

@@ -20,6 +20,8 @@ __all__ = ('Command',)
 class Command(BaseCommand):
     """Prepare dirs and symlinks."""
 
+    help = "Prepare dirs and make symlinks to dummy images"
+
     def handle(self, *args, **options):
         """Prepare dirs and symlinks."""
         prepare_dirs_and_symlinks()
