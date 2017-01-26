@@ -16,7 +16,10 @@ __all__ = ('prepare_dirs_and_symlinks',)
 
 
 def prepare_dirs_and_symlinks(create_dirs=False):
-    """Prepare dirs and symlinks."""
+    """Prepare dirs and symlinks.
+
+    :param bool create_dirs: If set to True, dirs are created.
+    """
     # What we shall do is to create dirs and make a symbolic link.
     if create_dirs:
         __dirs = (

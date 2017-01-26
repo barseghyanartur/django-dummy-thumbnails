@@ -40,13 +40,19 @@ if not ABSOLUTE_IMAGES_PATH.endswith(os.path.sep):
 
 OPTIONS = []
 
+# If verify images is set to True, we need to verify images (existence,
+# validity).
 if VERIFY_IMAGES:
     for filename in os.listdir(ABSOLUTE_IMAGES_PATH):
         abs_path = os.path.join(ABSOLUTE_IMAGES_PATH, filename)
+
+        # We need files only; directories are skipped.
         if os.path.isfile(abs_path):
             image_file = codecs.open(abs_path, mode='rb')
             buf = BytesIO(image_file.read())
             image_file.close()
+
+            # Check if it's an image
             try:
                 image = Image.open(buf)
 
@@ -58,6 +64,8 @@ if VERIFY_IMAGES:
 
             except IOError:
                 continue
+
+# Otherwise, just add files to the list.
 else:
     for filename in os.listdir(ABSOLUTE_IMAGES_PATH):
         abs_path = os.path.join(ABSOLUTE_IMAGES_PATH, filename)
@@ -69,6 +77,7 @@ def get_random_image(abspath=True):
     """Get random image.
 
     :param bool abspath: If set to True, absolute path is returned.
+    :return str: Path to the file.
     """
     random_image = random.randint(0, len(OPTIONS) - 1)
     image_path = OPTIONS[random_image]

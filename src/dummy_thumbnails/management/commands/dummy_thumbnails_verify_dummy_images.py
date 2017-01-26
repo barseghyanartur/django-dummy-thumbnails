@@ -54,7 +54,7 @@ class Command(BaseCommand):
         self.verbosity = options['verbosity']
 
     def handle(self, *args, **options):
-        """Prepare dirs and symlinks."""
+        """Handle."""
         self.set_options(**options)
 
         message = ['\n']

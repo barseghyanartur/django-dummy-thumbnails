@@ -23,5 +23,5 @@ class Command(BaseCommand):
     help = "Prepare dirs and make symlinks to dummy images"
 
     def handle(self, *args, **options):
-        """Prepare dirs and symlinks."""
+        """Handle."""
         prepare_dirs_and_symlinks()
