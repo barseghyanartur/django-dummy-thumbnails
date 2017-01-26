@@ -251,6 +251,12 @@ To remove broken/invalid dummy images without confirmation, type:
 
     ./manage.py dummy_thumbnails_verify_dummy_images --noinput
 
+To just list broken/invalid dummy images without removal, type:
+
+.. code-block:: sh
+
+    ./manage.py dummy_thumbnails_verify_dummy_images --list
+
 Another way to avoid failures is to set the value of
 ``DUMMY_THUMBNAILS_VERIFY_IMAGES`` to True in your project settings. Beware,
 that this slows down the start up time of your Django project, although does

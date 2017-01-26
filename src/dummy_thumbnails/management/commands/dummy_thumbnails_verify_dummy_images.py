@@ -37,6 +37,7 @@ class Command(BaseCommand):
         super(Command, self).__init__(*args, **kwargs)
         self.interactive = None
         self.verbosity = None
+        self.list_invalid_files = None
 
     def add_arguments(self, parser):
         """Command options."""
@@ -47,11 +48,19 @@ class Command(BaseCommand):
             default=True,
             help="Do NOT prompt the user for input of any kind."
         )
+        parser.add_argument(
+            '--list',
+            action='store_true',
+            dest='list_invalid_files',
+            default=False,
+            help="Just list files without asking for removal."
+        )
 
     def set_options(self, **options):
         """Set instance variables based on an options dict."""
         self.interactive = options['interactive']
         self.verbosity = options['verbosity']
+        self.list_invalid_files = options['list_invalid_files']
 
     def handle(self, *args, **options):
         """Handle."""
@@ -84,27 +93,37 @@ class Command(BaseCommand):
         if not len(broken_images):
             print("\nNo broken dummy images detected.\n")
         else:
-            if self.interactive:
+            if self.list_invalid_files:
                 message.append(
-                    "Broken dummy images detected. You will be now prompted "
-                    "to delete them one by one. \nType 'yes' to confirm a "
-                    "single image file removal and 'no' to cancel it.\n\n"
-                )
-                for broken_image in broken_images:
-                    message.append(
-                        "Delete {0} file? ".format(broken_image)
-                    )
-                    if input(''.join(message)) == 'yes':
-                        os.remove(broken_image)
-                    message = []
-                print('\n')
-            else:
-                message.append(
-                    "Broken dummy images detected and removed. The full list "
-                    "of removed broken dummy images follows.\n\n"
+                    "Broken dummy images detected. The full list of broken "
+                    "dummy images follows.\n\n"
                 )
                 for broken_image in broken_images:
                     message.append("{0}\n".format(broken_image))
-                    os.remove(broken_image)
-
                 print(''.join(message))
+            else:
+                if self.interactive:
+                    message.append(
+                        "Broken dummy images detected. You will be now "
+                        "prompted to delete them one by one. \nType 'yes' to "
+                        "confirm a single image file removal and 'no' to "
+                        "cancel it.\n\n"
+                    )
+                    for broken_image in broken_images:
+                        message.append(
+                            "Delete {0} file? ".format(broken_image)
+                        )
+                        if input(''.join(message)) == 'yes':
+                            os.remove(broken_image)
+                        message = []
+                    print('\n')
+                else:
+                    message.append(
+                        "Broken dummy images detected and removed. The full "
+                        "list of removed broken dummy images follows.\n\n"
+                    )
+                    for broken_image in broken_images:
+                        message.append("{0}\n".format(broken_image))
+                        os.remove(broken_image)
+
+                    print(''.join(message))

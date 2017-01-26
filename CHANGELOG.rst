@@ -15,6 +15,13 @@ are used for versioning (schema follows below):
   0.3.4 to 0.4).
 - All backwards incompatible changes are mentioned in this document.
 
+0.1.10
+------
+2017-01-26
+
+- Added a ``--list`` option to the management command
+  ``dummy_thumbnails_verify_dummy_images``.
+
 0.1.9
 -----
 2017-01-26
