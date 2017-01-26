@@ -50,10 +50,12 @@ if VERIFY_IMAGES:
             try:
                 image = Image.open(buf)
 
-                if image.verify():
+                try:
+                    image.verify()
                     OPTIONS.append(abs_path)
-                else:
+                except Exception:
                     continue
+
             except IOError:
                 continue
 else:

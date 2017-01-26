@@ -19,7 +19,7 @@ Could haves
 -----------
 - Finish the concept of ``image importers``.
 - Implement [``dummyimage_importer``](https://dummyimage.com/) as a proof of
-  concept.
+  concept. [Example](https://dummyimage.com/200x300&text=dummy-thumbnails).
 
 Would haves
 -----------
