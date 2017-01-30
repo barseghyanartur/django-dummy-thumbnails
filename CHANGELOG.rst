@@ -15,6 +15,12 @@ are used for versioning (schema follows below):
   0.3.4 to 0.4).
 - All backwards incompatible changes are mentioned in this document.
 
+0.2
+---
+2017-01-30
+
+- Added a feature to import dummy images from feed.
+
 0.1.10
 ------
 2017-01-26

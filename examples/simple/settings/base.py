@@ -280,6 +280,7 @@ INSTALLED_APPS = [
     # django-dummy-thumbnails
     'dummy_thumbnails',
     'dummy_thumbnails.contrib.thumbnailers.django_imagekit.generatorlibrary',
+    'dummy_thumbnails.contrib.image_importers.feed',
 
     # Other project specific apps
     'bar',  # Test app

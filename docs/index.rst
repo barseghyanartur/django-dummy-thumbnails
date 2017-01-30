@@ -285,6 +285,57 @@ If quick installer doesn't work for you, see the manual steps on running the
 `example project
 <https://github.com/barseghyanartur/django-dummy-thumbnails/tree/stable/examples>`_.
 
+Importing images from feed
+==========================
+Imports images from feeds, that support enclosures.
+
+Installation
+------------
+Add ``dummy_thumbnails.contrib.image_importers.feed`` to your
+``INSTALLED_APPS`` in the global ``settings.py``.
+
+.. code-block:: python
+
+    INSTALLED_APPS = (
+        # ...
+        'dummy_thumbnails.contrib.image_importers.feed',
+        # ...
+    )
+
+Usage
+-----
+To import 50 dummy images from Flickr `commercialphotos
+<https://www.flickr.com/groups/commercialphotos/>`_ feed, type:
+
+.. code-block:: sh
+
+    ./manage.py dummy_thumbnails_import_from_feed
+
+You can provide a custom feed URL and the number of dummy images to import.
+To import 100 images from Flickr `nationalgeographic
+<https://www.flickr.com/groups/nationalgeographic/>`_ group, type:
+
+.. code-block:: sh
+
+    ./manage.py dummy_thumbnails_import_from_feed \
+        "https://api.flickr.com/services/feeds/groups_pool.gne?id=36256495@N00" \
+        --limit=100
+
+Configuration
+-------------
+As you have seen, syntax allows to read images from any feed (that supports
+enclosures). In your project, you might want to make it easy for developers,
+so that they don't have to type the feed URL. Therefore a setting
+``DUMMY_THUMBNAILS_FEED_DEFAULT_FEED_URL`` has been introduced. It defaults
+to the URL of the `commercialphotos
+<https://www.flickr.com/groups/commercialphotos/>`_ group of the Flickr.
+
+.. code-block:: python
+
+    DUMMY_THUMBNAILS_FEED_DEFAULT_FEED_URL = "https://api.flickr.com/" \
+                                             "services/feeds/groups_pool.gne" \
+                                             "?id=36256495@N00"
+
 Testing
 =======
 Simply type:

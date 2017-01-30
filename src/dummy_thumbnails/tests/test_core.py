@@ -99,6 +99,14 @@ class DummyThumbnailsCoreTest(TestCase):
             interactive=False
         )
 
+    @log_info
+    def test_08_management_command_import_from_feed(self):
+        """Test ``dummy_thumbnails_import_from_feed`` command."""
+        call_command(
+            'dummy_thumbnails_import_from_feed',
+            verbosity=3
+        )
+
 
 if __name__ == '__main__':
     unittest.main()
