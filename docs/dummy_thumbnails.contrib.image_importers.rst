@@ -6,7 +6,7 @@ Subpackages
 
 .. toctree::
 
-    dummy_thumbnails.contrib.image_importers.flickr
+    dummy_thumbnails.contrib.image_importers.feed
 
 Module contents
 ---------------
