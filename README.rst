@@ -14,7 +14,7 @@ possible, with least efforts possible.
 Prerequisites
 =============
 - Django 1.8, 1.9, 1.10
-- Python 2.7, 3.4, 3.5
+- Python 2.7, 3.4, 3.5, 3.6
 
 Although `django-dummy-thumbnails` is not being tested against older versions
 of Django, tests do pass with Django versions 1.5, 1.6 and 1.7.
