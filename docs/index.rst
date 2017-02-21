@@ -375,7 +375,7 @@ Author
 Artur Barseghyan <artur.barseghyan@gmail.com>
 
 Documentation
-===============================================
+=============
 Contents:
 
 .. contents:: Table of Contents
@@ -386,7 +386,7 @@ Contents:
    dummy_thumbnails
 
 Indices and tables
-===============================================
+==================
 
 * :ref:`genindex`
 * :ref:`modindex`
