@@ -16,8 +16,8 @@ Prerequisites
 - Django 1.8, 1.9, 1.10, 1.11
 - Python 2.7, 3.4, 3.5, 3.6
 
-Although `django-dummy-thumbnails` is not being tested against older versions
-of Django, tests do pass with Django versions 1.5, 1.6 and 1.7.
+Although ``django-dummy-thumbnails`` is not being tested against older
+versions of Django, tests do pass with Django versions 1.5, 1.6 and 1.7.
 
 Installation
 ============
@@ -262,29 +262,6 @@ Another way to avoid failures is to set the value of
 that this slows down the start up time of your Django project, although does
 not slow down further rendering of the images.
 
-Demo
-====
-Run demo locally
-----------------
-In order to be able to quickly evaluate the `django-dummy-thumbnails`, a demo
-app (with a quick installer) has been created (works on Ubuntu/Debian, may
-work on other Linux systems as well, although not guaranteed). Follow the
-instructions below to have the demo running within a minute.
-
-Grab the latest ``dummy_thumbnails_demo_installer.sh``:
-
-.. code-block:: sh
-
-    wget -O - https://raw.github.com/barseghyanartur/django-dummy-thumbnails/stable/examples/dummy_thumbnails_demo_installer.sh | bash
-
-Open your browser and test the app.
-
-- URL: http://127.0.0.1:8001/
-
-If quick installer doesn't work for you, see the manual steps on running the
-`example project
-<https://github.com/barseghyanartur/django-dummy-thumbnails/tree/stable/examples>`_.
-
 Importing images from feed
 ==========================
 Imports images from feeds, that support enclosures.
@@ -335,6 +312,29 @@ to the URL of the `commercialphotos
     DUMMY_THUMBNAILS_FEED_DEFAULT_FEED_URL = "https://api.flickr.com/" \
                                              "services/feeds/groups_pool.gne" \
                                              "?id=36256495@N00"
+
+Demo
+====
+Run demo locally
+----------------
+In order to be able to quickly evaluate the `django-dummy-thumbnails`, a demo
+app (with a quick installer) has been created (works on Ubuntu/Debian, may
+work on other Linux systems as well, although not guaranteed). Follow the
+instructions below to have the demo running within a minute.
+
+Grab the latest ``dummy_thumbnails_demo_installer.sh``:
+
+.. code-block:: sh
+
+    wget -O - https://raw.github.com/barseghyanartur/django-dummy-thumbnails/stable/examples/dummy_thumbnails_demo_installer.sh | bash
+
+Open your browser and test the app.
+
+- URL: http://127.0.0.1:8001/
+
+If quick installer doesn't work for you, see the manual steps on running the
+`example project
+<https://github.com/barseghyanartur/django-dummy-thumbnails/tree/stable/examples>`_.
 
 Testing
 =======
