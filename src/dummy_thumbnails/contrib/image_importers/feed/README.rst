@@ -1,4 +1,4 @@
-==============================================
+=============================================
 dummy_thumbnails.contrib.image_importers.feed
 =============================================
 Feed image importer for ``django-dummy-thumbnails``. Imports photos from
