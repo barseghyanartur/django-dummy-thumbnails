@@ -7,14 +7,14 @@ try:
 except:
     readme = ''
 
-version = '0.2.1'
+version = '0.2.2'
 
 install_requires = [
     'six>=1.4.1',
     'django-nine>=0.1.10',
 ]
 
-extras_require=[
+extras_require = [
     'django-eximagination>=0.8',
     'feedparser'
 ]

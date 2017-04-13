@@ -93,7 +93,6 @@ INTERNAL_IPS = ('127.0.0.1', '*',)
 
 DEBUG = True
 DEBUG_TOOLBAR = not True
-TEMPLATE_DEBUG = not True
 DEBUG_TEMPLATE = not True
 DEV = True
 
