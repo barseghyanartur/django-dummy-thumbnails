@@ -46,7 +46,13 @@ Installation
             # ...
         )
 
-(3) Specify a custom path to your images directory:
+(3) Collect the statics:
+
+    .. code-block:: sh
+
+        ./manage.py collectstatic --noinput
+
+(4) Specify a custom path to your images directory in settings:
 
     .. code-block:: python
 
@@ -64,14 +70,13 @@ Installation
 
     If you prefer to use included `public domain images
     <https://github.com/barseghyanartur/django-dummy-thumbnails/tree/master/src/dummy_thumbnails/static/dummy_thumbnails/images/mixed>`_,
-    run the following management commands:
+    run the following management command:
 
     .. code-block:: sh
 
-        ./manage.py collectstatic --noinput
         ./manage.py dummy_thumbnails_symlink_dummy_images
 
-    And specify the following path:
+    And specify the following path in settings:
 
     .. code-block:: python
 
@@ -116,15 +121,26 @@ Modify your settings in the following way:
             # ...
         ]
 
-(2) If you are using the included public domain images, don't forget to collect
-    the static files and create a symlink:
+(2) Collect the statics:
 
     .. code-block:: sh
 
         ./manage.py collectstatic --noinput
+
+(3) Specify a custom path to your images directory in settings:
+
+    .. code-block:: python
+
+        DUMMY_THUMBNAILS_IMAGES_PATH = os.path.join(MEDIA_ROOT, 'mixed')
+
+(4) If you are using the included public domain images, don't forget to create 
+    a symlink:
+
+    .. code-block:: sh
+
         ./manage.py dummy_thumbnails_symlink_dummy_images
 
-(3) Now the following would work:
+(5) Now the following would work:
 
     .. code-block:: html
 
@@ -158,15 +174,25 @@ Modify your settings in the following way:
 
         THUMBNAIL_ENGINE = 'dummy_thumbnails.contrib.sorl_thumbnail.engines.DummyThumbnailsEngine'
 
-(3) If you are using the included public domain images, don't forget to collect
-    the static files and create a symlink:
+(3) Collect the statics:
 
     .. code-block:: sh
 
         ./manage.py collectstatic --noinput
+
+(4) Specify a custom path to your images directory in settings:
+
+    .. code-block:: python
+
+        DUMMY_THUMBNAILS_IMAGES_PATH = os.path.join(MEDIA_ROOT, 'mixed')
+
+(5) If you are using the included public domain images, don't forget create a symlink:
+
+    .. code-block:: sh
+
         ./manage.py dummy_thumbnails_symlink_dummy_images
 
-(4) Now the following would work:
+(6) Now the following would work:
 
     .. code-block:: html
 
@@ -210,15 +236,25 @@ Modify your settings in the following way:
             'dummy_thumbnails.contrib.thumbnailers.easy_thumbnails.source_generators.dummy_thumbnail',
         )
 
-(3) If you are using the included public domain images, don't forget to collect
-    the static files and create a symlink:
+(3) Collect the statics:
 
     .. code-block:: sh
 
         ./manage.py collectstatic --noinput
+
+(4) Specify a custom path to your images directory in settings:
+
+    .. code-block:: python
+
+        DUMMY_THUMBNAILS_IMAGES_PATH = os.path.join(MEDIA_ROOT, 'mixed')
+
+(5) If you are using the included public domain images, don't forget to create a symlink:
+
+    .. code-block:: sh
+
         ./manage.py dummy_thumbnails_symlink_dummy_images
 
-(4) Now the following would work:
+(6) Now the following would work:
 
     .. code-block:: html
 
