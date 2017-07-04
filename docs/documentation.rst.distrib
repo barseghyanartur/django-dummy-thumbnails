@@ -8,6 +8,7 @@ Contents:
 .. toctree::
    :maxdepth: 20
 
+   index
    dummy_thumbnails
 
 Indices and tables
