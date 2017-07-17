@@ -29,11 +29,17 @@ Installation
 
         pip install django-dummy-thumbnails
 
-    Latest stable version from GitHub:
+    or latest stable version from GitHub:
 
     .. code-block:: sh
 
         pip install https://github.com/barseghyanartur/django-dummy-thumbnails/archive/stable.tar.gz
+
+    or latest stable version from BitBucket:
+
+    .. code-block:: sh
+
+        pip install https://bitbucket.org/barseghyanartur/django-dummy-thumbnails/get/stable.tar.gz
 
 (2) Add ``dummy_thumbnails`` to your ``INSTALLED_APPS`` in the
     global ``settings.py``.
@@ -419,6 +425,7 @@ Contents:
 .. toctree::
    :maxdepth: 20
 
+   index
    dummy_thumbnails
 
 Indices and tables
