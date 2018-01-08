@@ -15,6 +15,13 @@ are used for versioning (schema follows below):
   0.3.4 to 0.4).
 - All backwards incompatible changes are mentioned in this document.
 
+0.2.3
+-----
+2017-01-08
+
+- Example project upgraded to work with Django 2.0.
+- Year change in copyright and licenses.
+
 0.2.2
 -----
 2017-04-13

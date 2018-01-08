@@ -133,7 +133,7 @@ if versions.DJANGO_GTE_1_10:
                 'loaders': [
                     'django.template.loaders.filesystem.Loader',
                     'django.template.loaders.app_directories.Loader',
-                    'django.template.loaders.eggs.Loader',
+                    # 'django.template.loaders.eggs.Loader',
                 ],
                 'libraries': {
                     'sorl_thumbnail':
@@ -166,7 +166,7 @@ elif versions.DJANGO_GTE_1_9:
                 'loaders': [
                     'django.template.loaders.filesystem.Loader',
                     'django.template.loaders.app_directories.Loader',
-                    'django.template.loaders.eggs.Loader',
+                    # 'django.template.loaders.eggs.Loader',
                 ],
                 'libraries': {
                     'sorl_thumbnail':
@@ -199,7 +199,7 @@ elif versions.DJANGO_GTE_1_8:
                 'loaders': [
                     'django.template.loaders.filesystem.Loader',
                     'django.template.loaders.app_directories.Loader',
-                    'django.template.loaders.eggs.Loader',
+                    # 'django.template.loaders.eggs.Loader',
                 ],
                 # 'libraries': {
                 #     'sorl_thumbnail':
@@ -241,7 +241,7 @@ else:
         PROJECT_DIR(os.path.join('..', 'templates')),
     )
 
-MIDDLEWARE_CLASSES = (
+_MIDDLEWARE = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -413,7 +413,7 @@ if DEBUG and DEBUG_TOOLBAR:
         import debug_toolbar
 
         # debug_toolbar
-        MIDDLEWARE_CLASSES += (
+        _MIDDLEWARE += (
             'debug_toolbar.middleware.DebugToolbarMiddleware',
         )
 
@@ -427,6 +427,12 @@ if DEBUG and DEBUG_TOOLBAR:
         }
     except ImportError:
         pass
+
+# Do it here, so that we don't mess up with middleware
+if versions.DJANGO_GTE_1_10:
+    MIDDLEWARE = _MIDDLEWARE
+else:
+    MIDDLEWARE_CLASSES = _MIDDLEWARE
 
 # Make the `django-dummy-thumbnails` package available without
 # installation.

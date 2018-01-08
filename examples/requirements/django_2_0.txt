@@ -1,0 +1,11 @@
+-r common.txt
+-r testing.txt
+
+Django>=2.0,<2.1
+django-debug-toolbar>=1.6,<=1.9.1
+sqlparse==0.2.2
+django-nine
+
+django-imagekit==4.0.2
+easy-thumbnails==2.5.0
+sorl-thumbnail==12.4.1

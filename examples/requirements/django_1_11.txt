@@ -9,6 +9,3 @@ django-nine
 django-imagekit==3.3
 easy-thumbnails==2.4.1
 sorl-thumbnail==12.4a1
-
-# easy-thumbnails, compatible with Django 1.11
-#https://github.com/SmileyChris/easy-thumbnails/archive/master.tar.gz

@@ -1,5 +1,5 @@
-dummy_thumbnails.contrib.thumbnailers.sorl_thumbnail package
-============================================================
+dummy\_thumbnails\.contrib\.thumbnailers\.sorl\_thumbnail package
+=================================================================
 
 Subpackages
 -----------

@@ -1,11 +1,11 @@
-dummy_thumbnails.contrib.thumbnailers.django_imagekit package
-=============================================================
+dummy\_thumbnails\.contrib\.thumbnailers\.django\_imagekit package
+==================================================================
 
 Submodules
 ----------
 
-dummy_thumbnails.contrib.thumbnailers.django_imagekit.generatorlibrary module
------------------------------------------------------------------------------
+dummy\_thumbnails\.contrib\.thumbnailers\.django\_imagekit\.generatorlibrary module
+-----------------------------------------------------------------------------------
 
 .. automodule:: dummy_thumbnails.contrib.thumbnailers.django_imagekit.generatorlibrary
     :members:

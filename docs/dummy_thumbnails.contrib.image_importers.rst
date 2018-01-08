@@ -1,5 +1,5 @@
-dummy_thumbnails.contrib.image_importers package
-================================================
+dummy\_thumbnails\.contrib\.image\_importers package
+====================================================
 
 Subpackages
 -----------

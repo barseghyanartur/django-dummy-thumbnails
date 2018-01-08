@@ -1,11 +1,11 @@
-dummy_thumbnails.contrib.thumbnailers.easy_thumbnails package
-=============================================================
+dummy\_thumbnails\.contrib\.thumbnailers\.easy\_thumbnails package
+==================================================================
 
 Submodules
 ----------
 
-dummy_thumbnails.contrib.thumbnailers.easy_thumbnails.source_generators module
-------------------------------------------------------------------------------
+dummy\_thumbnails\.contrib\.thumbnailers\.easy\_thumbnails\.source\_generators module
+-------------------------------------------------------------------------------------
 
 .. automodule:: dummy_thumbnails.contrib.thumbnailers.easy_thumbnails.source_generators
     :members:

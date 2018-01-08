@@ -1,5 +1,5 @@
-dummy_thumbnails package
-========================
+dummy\_thumbnails package
+=========================
 
 Subpackages
 -----------
@@ -13,48 +13,48 @@ Subpackages
 Submodules
 ----------
 
-dummy_thumbnails.apps module
-----------------------------
+dummy\_thumbnails\.apps module
+------------------------------
 
 .. automodule:: dummy_thumbnails.apps
     :members:
     :undoc-members:
     :show-inheritance:
 
-dummy_thumbnails.base module
-----------------------------
+dummy\_thumbnails\.base module
+------------------------------
 
 .. automodule:: dummy_thumbnails.base
     :members:
     :undoc-members:
     :show-inheritance:
 
-dummy_thumbnails.conf module
-----------------------------
+dummy\_thumbnails\.conf module
+------------------------------
 
 .. automodule:: dummy_thumbnails.conf
     :members:
     :undoc-members:
     :show-inheritance:
 
-dummy_thumbnails.defaults module
---------------------------------
+dummy\_thumbnails\.defaults module
+----------------------------------
 
 .. automodule:: dummy_thumbnails.defaults
     :members:
     :undoc-members:
     :show-inheritance:
 
-dummy_thumbnails.helpers module
--------------------------------
+dummy\_thumbnails\.helpers module
+---------------------------------
 
 .. automodule:: dummy_thumbnails.helpers
     :members:
     :undoc-members:
     :show-inheritance:
 
-dummy_thumbnails.settings module
---------------------------------
+dummy\_thumbnails\.settings module
+----------------------------------
 
 .. automodule:: dummy_thumbnails.settings
     :members:

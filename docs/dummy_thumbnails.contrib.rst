@@ -1,5 +1,5 @@
-dummy_thumbnails.contrib package
-================================
+dummy\_thumbnails\.contrib package
+==================================
 
 Subpackages
 -----------

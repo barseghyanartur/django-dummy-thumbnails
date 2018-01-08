@@ -10,8 +10,9 @@ import unittest
 from bs4 import BeautifulSoup
 
 from django.core.management import call_command
-from django.core.urlresolvers import reverse
 from django.test import Client, TestCase
+
+from nine.versions import DJANGO_GTE_1_10
 
 from ..base import get_random_image
 from ..conf import get_setting
@@ -20,9 +21,14 @@ from ..helpers import prepare_dirs_and_symlinks
 from .base import log_info
 from .helpers import setup_app
 
+if DJANGO_GTE_1_10:
+    from django.urls import reverse
+else:
+    from django.core.urlresolvers import reverse
+
 __title__ = 'dummy_thumbnails.tests.test_core'
 __author__ = 'Artur Barseghyan <artur.barseghyan@gmail.com>'
-__copyright__ = '2016-2017 Artur Barseghyan'
+__copyright__ = '2016-2018 Artur Barseghyan'
 __license__ = 'GPL 2.0/LGPL 2.1'
 __all__ = ('DummyThumbnailsCoreTest',)
 

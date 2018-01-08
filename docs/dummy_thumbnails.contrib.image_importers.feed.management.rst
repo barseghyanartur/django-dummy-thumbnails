@@ -1,5 +1,5 @@
-dummy_thumbnails.contrib.image_importers.feed.management package
-================================================================
+dummy\_thumbnails\.contrib\.image\_importers\.feed\.management package
+======================================================================
 
 Subpackages
 -----------

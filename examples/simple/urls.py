@@ -6,15 +6,25 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
 
+from nine.versions import DJANGO_GTE_2_0
+
 __all__ = ('urlpatterns',)
 
 admin.autodiscover()
 
 urlpatterns = []
+urlpatterns_args = []
+
+if DJANGO_GTE_2_0:
+    urlpatterns_args += [
+        url(r'^admin/', admin.site.urls),
+    ]
+else:
+    urlpatterns_args += [
+        url(r'^admin/', include(admin.site.urls)),
+    ]
 
 urlpatterns_args = [
-    url(r'^admin/', include(admin.site.urls)),
-
     url(r'^$', TemplateView.as_view(template_name='home/base_site.html')),
     url(r'^django-imagekit/$',
         TemplateView.as_view(template_name='home/django_imagekit.html'),

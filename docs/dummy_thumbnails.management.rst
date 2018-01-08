@@ -1,5 +1,5 @@
-dummy_thumbnails.management package
-===================================
+dummy\_thumbnails\.management package
+=====================================
 
 Subpackages
 -----------
