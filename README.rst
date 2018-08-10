@@ -178,7 +178,7 @@ Modify your settings in the following way:
 
     .. code-block:: python
 
-        THUMBNAIL_ENGINE = 'dummy_thumbnails.contrib.sorl_thumbnail.engines.DummyThumbnailsEngine'
+        THUMBNAIL_ENGINE = 'dummy_thumbnails.contrib.thumbnailers.sorl_thumbnail.engines.dummy_engine.DummyThumbnailsEngine'
 
 (3) Collect the statics:
 
