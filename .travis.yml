@@ -43,6 +43,7 @@ install:
 
 before_script:
   - export CHROME_BIN=/home/travis/chromedriver
+  - mkdir -p examples/media/static
   - sleep 2
 
 script: travis_retry tox -e $TOX_ENV
