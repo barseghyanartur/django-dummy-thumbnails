@@ -4,6 +4,18 @@ django-dummy-thumbnails
 Dummy thumbnails for `most popular <Supported thumbnailers_>`_ Django
 thumbnail generators.
 
+.. image:: https://img.shields.io/pypi/v/django-dummy-thumbnails.svg
+   :target: https://pypi.python.org/pypi/django-dummy-thumbnails
+   :alt: PyPI Version
+
+.. image:: https://img.shields.io/travis/barseghyanartur/django-dummy-thumbnails/master.svg
+   :target: http://travis-ci.org/barseghyanartur/django-dummy-thumbnails
+   :alt: Build Status
+
+.. image:: https://img.shields.io/badge/license-GPL--2.0--only%20OR%20LGPL--2.1--or--later-blue.svg
+   :target: https://github.com/barseghyanartur/django-dummy-thumbnails/#License
+   :alt: GPL-2.0-only OR LGPL-2.1-or-later
+
 There are times when you have a database of a Django site and you need to
 quickly start it up to fix/develop, but then you realise that images are
 missing and you need to have images, because either your layout is broken or,
@@ -13,8 +25,8 @@ possible, with least efforts possible.
 
 Prerequisites
 =============
-- Django 1.8, 1.9, 1.10, 1.11, 2.0
-- Python 2.7, 3.4, 3.5, 3.6
+- Django 1.8, 1.9, 1.10, 1.11, 2.0, 2.1, 2.2
+- Python 2.7, 3.5, 3.6, 3.7
 
 Although ``django-dummy-thumbnails`` is not being tested against older
 versions of Django, tests do pass with Django versions 1.5, 1.6 and 1.7.
@@ -178,7 +190,7 @@ Modify your settings in the following way:
 
     .. code-block:: python
 
-        THUMBNAIL_ENGINE = 'dummy_thumbnails.contrib.sorl_thumbnail.engines.DummyThumbnailsEngine'
+        THUMBNAIL_ENGINE = 'dummy_thumbnails.contrib.thumbnailers.sorl_thumbnail.engines.dummy_engine.DummyThumbnailsEngine'
 
 (3) Collect the statics:
 
@@ -396,7 +408,7 @@ or use tox to check specific env:
 
 .. code-block:: sh
 
-    tox -e py35
+    tox -e py37
 
 or run Django tests:
 
@@ -406,7 +418,7 @@ or run Django tests:
 
 License
 =======
-GPL 2.0/LGPL 2.1
+GPL-2.0-only OR LGPL-2.1-or-later
 
 Support
 =======
@@ -426,6 +438,7 @@ Contents:
    :maxdepth: 20
 
    index
+   changelog
    dummy_thumbnails
 
 Indices and tables

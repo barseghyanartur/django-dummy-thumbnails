@@ -1,1 +1,5 @@
--r base.txt
+docutils
+Jinja2
+MarkupSafe
+Sphinx
+https://github.com/barseghyanartur/rinohtype/archive/0.3.1.zip

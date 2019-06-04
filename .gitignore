@@ -9,6 +9,8 @@
 .coverage
 /htmlcov/
 *.py,cover
+.idea/
+.pytest_cache/
 
 MANIFEST.in~
 MIND_BUCKET.rst

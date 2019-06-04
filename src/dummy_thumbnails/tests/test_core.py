@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 from django.core.management import call_command
 from django.test import Client, TestCase
 
-from nine.versions import DJANGO_GTE_1_10
+from django_nine.versions import DJANGO_GTE_1_10
 
 from ..base import get_random_image
 from ..conf import get_setting

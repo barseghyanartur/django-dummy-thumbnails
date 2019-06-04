@@ -7,11 +7,11 @@ try:
 except:
     readme = ''
 
-version = '0.2.3'
+version = '0.2.4'
 
 install_requires = [
     'six>=1.4.1',
-    'django-nine>=0.1.10',
+    'django-nine>=0.2.2',
 ]
 
 extras_require = [
@@ -38,7 +38,6 @@ setup(
     long_description=readme,
     classifiers=[
         "Programming Language :: Python :: 2.7",
-        "Programming Language :: Python :: 3.4",
         "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Environment :: Web Environment",
@@ -56,7 +55,7 @@ setup(
     url='https://github.com/barseghyanartur/django-dummy-thumbnails/',
     package_dir={'': 'src'},
     packages=find_packages(where='./src'),
-    license='GPL 2.0/LGPL 2.1',
+    license='GPL-2.0-only OR LGPL-2.1-or-later',
     install_requires=(install_requires + extras_require),
     tests_require=tests_require,
     include_package_data=True,

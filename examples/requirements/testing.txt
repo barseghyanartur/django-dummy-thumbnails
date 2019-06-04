@@ -1,8 +1,8 @@
 beautifulsoup4==4.5.1
-factory_boy==2.7.0
-fake-factory==0.7.2
-Pillow==3.4.2
-pytest==3.0.2
-pytest-django==2.9.1
-pytest-cov==2.2.1
-tox==2.1.1
+factory_boy==2.11.1
+Faker==1.0.7
+Pillow==6.0.0
+pytest==3.7.1
+pytest-django==3.3.3
+pytest-cov==2.5.1
+tox==3.1.2

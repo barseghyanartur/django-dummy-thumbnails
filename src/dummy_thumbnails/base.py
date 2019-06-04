@@ -40,37 +40,40 @@ if not ABSOLUTE_IMAGES_PATH.endswith(os.path.sep):
 
 OPTIONS = []
 
-# If verify images is set to True, we need to verify images (existence,
-# validity).
-if VERIFY_IMAGES:
-    for filename in os.listdir(ABSOLUTE_IMAGES_PATH):
-        abs_path = os.path.join(ABSOLUTE_IMAGES_PATH, filename)
+try:
+    # If verify images is set to True, we need to verify images (existence,
+    # validity).
+    if VERIFY_IMAGES:
+        for filename in os.listdir(ABSOLUTE_IMAGES_PATH):
+            abs_path = os.path.join(ABSOLUTE_IMAGES_PATH, filename)
 
-        # We need files only; directories are skipped.
-        if os.path.isfile(abs_path):
-            image_file = codecs.open(abs_path, mode='rb')
-            buf = BytesIO(image_file.read())
-            image_file.close()
+            # We need files only; directories are skipped.
+            if os.path.isfile(abs_path):
+                image_file = codecs.open(abs_path, mode='rb')
+                buf = BytesIO(image_file.read())
+                image_file.close()
 
-            # Check if it's an image
-            try:
-                image = Image.open(buf)
-
+                # Check if it's an image
                 try:
-                    image.verify()
-                    OPTIONS.append(abs_path)
-                except Exception:
+                    image = Image.open(buf)
+
+                    try:
+                        image.verify()
+                        OPTIONS.append(abs_path)
+                    except Exception:
+                        continue
+
+                except IOError:
                     continue
 
-            except IOError:
-                continue
-
-# Otherwise, just add files to the list.
-else:
-    for filename in os.listdir(ABSOLUTE_IMAGES_PATH):
-        abs_path = os.path.join(ABSOLUTE_IMAGES_PATH, filename)
-        if os.path.isfile(abs_path):
-            OPTIONS.append(abs_path)
+    # Otherwise, just add files to the list.
+    else:
+        for filename in os.listdir(ABSOLUTE_IMAGES_PATH):
+            abs_path = os.path.join(ABSOLUTE_IMAGES_PATH, filename)
+            if os.path.isfile(abs_path):
+                OPTIONS.append(abs_path)
+except:
+    pass
 
 
 def get_random_image(abspath=True):
