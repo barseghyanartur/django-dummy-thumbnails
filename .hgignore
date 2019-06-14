@@ -9,6 +9,8 @@ syntax: regexp
 \.coverage$
 ^htmlcov/
 \.py,cover
+\.idea/
+\.pytest_cache/
 
 ^MANIFEST\.in~
 ^tmp/

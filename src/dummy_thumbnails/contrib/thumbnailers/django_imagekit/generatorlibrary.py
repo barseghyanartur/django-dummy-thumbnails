@@ -28,10 +28,22 @@ __all__ = (
 class DummyThumbnail(ImageSpec):
     """Dummy thumbnail."""
 
-    def __init__(self, width=None, height=None, anchor=None, crop=None,
-                 upscale=None, **kwargs):
-        self.processors = [ThumbnailProcessor(width, height, anchor=anchor,
-                                              crop=crop, upscale=upscale)]
+    def __init__(self,
+                 width=None,
+                 height=None,
+                 anchor=None,
+                 crop=None,
+                 upscale=None,
+                 **kwargs):
+        self.processors = [
+            ThumbnailProcessor(
+                width,
+                height,
+                anchor=anchor,
+                crop=crop,
+                upscale=upscale
+            )
+        ]
 
         source = kwargs.get('source')
         if not (source is not None and getattr(source, 'name', None)):

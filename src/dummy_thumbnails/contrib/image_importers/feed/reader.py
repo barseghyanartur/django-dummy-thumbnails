@@ -40,9 +40,9 @@ def save_feed_images(url, limit, destination_directory):
 
     filenames = []
 
-    for url in urls:
+    for _url in urls:
         file_data = obtain_image(
-            image_source=url,
+            image_source=_url,
             save_to=destination_directory,
             media_url=destination_directory,
             force_update=False,
