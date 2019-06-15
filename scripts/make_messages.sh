@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 echo 'Making messages for django-dummy-thumbnails...'
 cd src/dummy_thumbnails/
 django-admin.py makemessages -l de

@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 pip uninstall django-dummy-thumbnails -y
 rm build -rf
 rm dist -rf

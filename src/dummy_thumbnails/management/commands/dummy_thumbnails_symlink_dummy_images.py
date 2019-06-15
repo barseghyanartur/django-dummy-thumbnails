@@ -22,6 +22,17 @@ class Command(BaseCommand):
 
     help = "Prepare dirs and make symlinks to dummy images"
 
+    def add_arguments(self, parser):
+        # Named (optional) arguments
+        parser.add_argument(
+            '--create-dirs',
+            action='store_true',
+            dest='create_dirs',
+            default=False,
+            help='Create additional dirs',
+        )
+
     def handle(self, *args, **options):
         """Handle."""
-        prepare_dirs_and_symlinks()
+        create_dirs = options.get('create_dirs', False)
+        prepare_dirs_and_symlinks(create_dirs=create_dirs)

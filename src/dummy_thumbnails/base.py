@@ -72,7 +72,7 @@ try:
             abs_path = os.path.join(ABSOLUTE_IMAGES_PATH, filename)
             if os.path.isfile(abs_path):
                 OPTIONS.append(abs_path)
-except IOError:
+except (IOError, OSError):
     pass
 
 
