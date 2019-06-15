@@ -13,9 +13,9 @@ import os
 
 from django.conf import settings as django_settings
 
-from easy_thumbnails.utils import exif_orientation as utils_exif_orientation
+from easy_thumbnails.source_generators import pil_image
 
-from six import BytesIO
+from six import PY3
 
 from ....base import get_random_image
 
@@ -31,6 +31,7 @@ __copyright__ = '2016-2018 Artur Barseghyan'
 __license__ = 'GPL 2.0/LGPL 2.1'
 __all__ = (
     'dummy_thumbnail',
+    'load_random_file',
 )
 
 
@@ -47,42 +48,35 @@ def dummy_thumbnail(source, exif_orientation=True, **options):
     # object, PIL may have problems with it. For example, some image types
     # require tell and seek methods that are not present on all storage
     # File objects.
-    media_root = os.path.abspath(django_settings.MEDIA_ROOT)
-
     if not (
             source and
             hasattr(source, 'path') and
             (os.path.exists(source.path) or os.path.isfile(source.path))
     ):
-        source = load_random_file(media_root)
+        source = load_random_file()
 
-    buf = BytesIO(source.read())
-
-    image = Image.open(buf)
-    # Fully load the image now to catch any problems with the image contents.
-    try:
-        # An "Image file truncated" exception can occur for some images that
-        # are still mostly valid -- we'll swallow the exception.
-        image.load()
-    except IOError:
-        pass
-
-    # Try a second time to catch any other potential exceptions.
-    image.load()
-
-    if exif_orientation:
-        image = utils_exif_orientation(image)
-    return image
+    return pil_image(source, exif_orientation, **options)
 
 
-def load_random_file(media_root):
+def load_random_file():
     """Load random file."""
     # We should load ``ThumbnailFile`` here, since otherwise we might get
     # ``AppRegistryNotReady`` exception.
     from easy_thumbnails.files import ThumbnailFile
 
+    media_root = os.path.abspath(django_settings.MEDIA_ROOT)
+    static_root = os.path.abspath(django_settings.STATIC_ROOT)
+
     random_image = get_random_image()
-    random_file = codecs.open(random_image)
+
+    if PY3:
+        random_file = codecs.open(random_image, mode='rb')
+    else:
+        random_file = codecs.open(random_image)
+
     source = ThumbnailFile(random_file.name, random_file)
-    source.name = source.file.name.replace(media_root, '')[1:]
+    source.name = source.file.name \
+        .replace(media_root, '') \
+        .replace(static_root, '')[1:]
+
     return source

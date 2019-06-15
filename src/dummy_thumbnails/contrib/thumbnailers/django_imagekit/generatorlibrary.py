@@ -8,6 +8,10 @@ default generator is being replaced (unregistered) here with patched one
 - DummyThumbnail: Dummy thumbnails generator for django-imagekit.
 """
 
+import os
+
+from django.conf import settings as django_settings
+
 from imagekit.cachefiles import ImageCacheFile
 from imagekit.processors import Thumbnail as ThumbnailProcessor
 from imagekit.registry import register, unregister
@@ -48,7 +52,13 @@ class DummyThumbnail(ImageSpec):
         source = kwargs.get('source')
         if not (source is not None and getattr(source, 'name', None)):
             random_image = get_random_image()
+            media_root = os.path.abspath(django_settings.MEDIA_ROOT)
+            static_root = os.path.abspath(django_settings.STATIC_ROOT)
             source = ImageCacheFile(self, name=random_image)
+            source.name = source.file.name \
+                .replace(media_root, '') \
+                .replace(static_root, '')[1:]
+
             kwargs['source'] = source
 
         super(DummyThumbnail, self).__init__(**kwargs)

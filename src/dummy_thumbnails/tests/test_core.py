@@ -62,7 +62,7 @@ class DummyThumbnailsCoreTest(TestCase):
         )
         for image in images:
             source = image.get('src')
-            self.assertIsNotNone(source)
+            self.assertTrue(source)
 
     @log_info
     def test_02_test_settings(self):

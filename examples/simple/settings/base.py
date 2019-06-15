@@ -291,7 +291,7 @@ LOGIN_ERROR_URL = '/en/accounts/login/'
 LOGOUT_URL = '/en/accounts/logout/'
 LOGIN_REDIRECT_URL = '/en/'
 
-# DUMMY_THUMBNAILS_IMAGES_PATH = os.path.join(MEDIA_ROOT, 'mixed')
+DUMMY_THUMBNAILS_IMAGES_PATH = os.path.join(MEDIA_ROOT, 'mixed')
 
 THUMBNAIL_SOURCE_GENERATORS = (
     'dummy_thumbnails.contrib.thumbnailers.easy_thumbnails.source_generators.'
