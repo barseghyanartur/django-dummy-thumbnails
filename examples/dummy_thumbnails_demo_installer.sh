@@ -1,5 +1,5 @@
 wget -O django_dummy_thumbnails_demo_installer.tar.gz https://github.com/barseghyanartur/django-dummy-thumbnails/archive/stable.tar.gz
-virtualenv django-dummy-thumbnails
+virtualenv django-dummy-thumbnails -p /usr/bin/python3.7
 source django-dummy-thumbnails/bin/activate
 mkdir django_dummy_thumbnails_demo_installer/
 tar -xvf django_dummy_thumbnails_demo_installer.tar.gz -C django_dummy_thumbnails_demo_installer
