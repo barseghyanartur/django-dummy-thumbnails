@@ -8,6 +8,10 @@ thumbnail generators.
    :target: https://pypi.python.org/pypi/django-dummy-thumbnails
    :alt: PyPI Version
 
+.. image:: https://img.shields.io/pypi/pyversions/django-dummy-thumbnails.svg
+    :target: https://pypi.python.org/pypi/django-dummy-thumbnails/
+    :alt: Supported Python versions
+
 .. image:: https://img.shields.io/travis/barseghyanartur/django-dummy-thumbnails/master.svg
    :target: http://travis-ci.org/barseghyanartur/django-dummy-thumbnails
    :alt: Build Status
@@ -15,6 +19,10 @@ thumbnail generators.
 .. image:: https://img.shields.io/badge/license-GPL--2.0--only%20OR%20LGPL--2.1--or--later-blue.svg
    :target: https://github.com/barseghyanartur/django-dummy-thumbnails/#License
    :alt: GPL-2.0-only OR LGPL-2.1-or-later
+
+.. image:: https://coveralls.io/repos/github/barseghyanartur/django-dummy-thumbnails/badge.svg?branch=master
+    :target: https://coveralls.io/github/barseghyanartur/django-dummy-thumbnails?branch=master
+    :alt: Coverage
 
 There are times when you have a database of a Django site and you need to
 quickly start it up to fix/develop, but then you realise that images are
